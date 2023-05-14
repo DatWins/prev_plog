@@ -50,9 +50,9 @@ $$
 
 ![MF](/assets/post_imgs/Matrix Factorization.png)
 
-**Objective Function**
+## Objective Function
 
-**기본 형태**
+### 기본 형태
 
 $$
 \tt \min _{P, Q} \sum_{\text {observed } r_{u, i}}\left(r_{u, i}-p_u^T q_i\right)^2
@@ -68,7 +68,7 @@ $$
 - $\widehat {r_{u,i}} = p_u^Tq_i$ : 예측된 Rating Matrix
     - 원본 수식처럼 $p \times q^T$ 가 아닌  $p^T \times q$ 인 이유
         
-        우선, $r_{u,i}$, $p_{u,x}$, 그리고 $q_{x,i}$는 각각 다음을 의미합니다.($Q^T$ 헷갈리지 않게 주의)
+        우선, $r_{u,i}$, $p_{u,x}$, 그리고 $q_{x,i}$는 각각 다음을 의미한다.($Q^T$ 헷갈리지 않게 주의)
         
         $r_{u,i}$ : $R$의 $(u,i)$번째 원소
         
@@ -78,18 +78,18 @@ $$
         
         또한, 행렬 연산에서 벡터는 보통 "열벡터(column vector)"를 의미하므로
         
-        $P$의 $u$번째 행($p_{u,1:k}$)은 $P^T$의 $u$번째 열($p^T_{1:k,u}$), 즉 $p^T_u$로 표현할 수 있습니다.
+        $P$의 $u$번째 행($p_{u,1:k}$)은 $P^T$의 $u$번째 열($p^T_{1:k,u}$), 즉 $p^T_u$로 표현할 수 있다.
         
         따라서, 해당 공식에서 $R$의 $(u,i)$번째 원소의 추정치인 $\widehat{r_{u,i}}$는
         
-        $P^T$의 $u$번째 열벡터($p^T_u$)와 $Q^T$의 $i$번째 열벡터($q_i$)를 곱한 값이라고 할 수 있습니다.
+        $P^T$의 $u$번째 열벡터($p^T_u$)와 $Q^T$의 $i$번째 열벡터($q_i$)를 곱한 값이라고 할 수 있다.
         
-        물론, $\widehat{r_{u,i}}$는 $1 \times 1$ 크기의 행렬이므로 우측 항에 전치를 취해도 결과가 동일합니다.
+        물론, $\widehat{r_{u,i}}$는 $1 \times 1$ 크기의 행렬이므로 우측 항에 전치를 취해도 결과가 동일하다.
         
         ( $\therefore \widehat{r_{u,i}} = p^T_u \cdot q_i = q^T_i \cdot p_u$ )
         
 
-**최종 형태**
+### 최종 형태
 
 $$
 \tt \min _{P, Q} \sum_{\text {observed  }r_{u,i}}\left(r_{u, i}-p_u^T q_i\right)^2
@@ -148,13 +148,13 @@ MF 모델에서의 SGD
 
 ---
 
-**MF 기반 추천으로 가장 널리 알려진 논문**
+## MF 기반 추천으로 가장 널리 알려진 논문
 
 [Matrix Factorization Techniques for Recommender Systems](https://datajobs.com/data-science-repo/Recommender-Systems-%5bNetflix%5d.pdf)
 
 기본적인 MF에 다양한 테크닉을 추가하여 성능을 향상시켰다.
 
-- **Adding Biases**
+- ### Adding Biases
     
     어떤 유저는 모든 영화에 대해 평점을 낮게 줄 수도 있다.
     
@@ -190,7 +190,7 @@ MF 모델에서의 SGD
         \\& p_u \leftarrow p_u+\gamma \cdot\left(e_{u i} q_i-\lambda p_u\right) \\& q_i \leftarrow q_i+\gamma \cdot\left(e_{u i} p_u-\lambda q_i\right)\end{aligned}
         $$
         
-- **Adding Confidence Level**
+- ### Adding Confidence Level
     
     모든 평점이 동일한 신뢰도를 갖지 않는다. ⇒ $r_{u,i}$에 대한 신뢰도를 의미하는 $c_{u,i}$를 추가
     
@@ -208,7 +208,7 @@ MF 모델에서의 SGD
         {\tt \min _{P, Q} \sum_{\text {observed } r_{u, i}}  {c_{u, i}}\left(r_{u, i}-\mu-b_u-b_i-p_u^T q_i\right)^2}\\+\tt\lambda\left(|| p_u\left\|_2^2+|| q_i\right\|_2^2+b_u^2+b_i^2\right)
         $$
         
-- **Adding Temporal Dynamics**
+- ### Adding Temporal Dynamics
     
     시간에 따라 변하는 유저, 아이템의 특성을 반영하고 싶다.
     
@@ -227,7 +227,7 @@ MF 모델에서의 SGD
 
 ### 단점
 
-- **p, q 변수가 2개라서 빠른계산 불가능**
+- **p, q 변수가 2개라서 빠른계산이 불가능하다.**
     - SGD를 학습하는 과정에서 업데이트를 여러 번 하기 때문에
     빠른 계산이 불가능하다는 단점이 누적된다.
 - 유저 수와 아이템 수가 커질수록 반복문으로 인한 연산량 증가
