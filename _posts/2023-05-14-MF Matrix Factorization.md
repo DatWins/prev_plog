@@ -1,7 +1,7 @@
 ---
 title: 'MF: Matrix Factorization'
 date: 2023-03-30 12:19:00 +0900
-categories: [Information,RecSys]
+categories: [AI,Recommendation System]
 tags: [collaborative filtering, matrix factorization]
 ---
 **행렬을 인수분해 후 재생성하여 결측치를 예측하는 방법**
@@ -225,7 +225,7 @@ MF 모델에서의 SGD
     $$
     
 
-### 단점
+## 단점
 
 - **p, q 변수가 2개라서 빠른계산이 불가능하다.**
     - SGD를 학습하는 과정에서 업데이트를 여러 번 하기 때문에
