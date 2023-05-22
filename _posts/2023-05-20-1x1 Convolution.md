@@ -17,11 +17,11 @@ tags: ['Convolution Neural Network', 'Bottle-neck']
 
 - 1 * 1 Convolution을 사용하지 않는 경우
     
-    ![1x1 Conv_1](/assets/post_imgs/1x1 Conv_2.png)
+    ![1x1 Conv_2](/assets/post_imgs/1x1 Conv_2.png)
     
 - 1 * 1 Convolution을 사용한 경우
     
-    ![1x1 Conv_1](/assets/post_imgs/1x1 Conv_3.png)
+    ![1x1 Conv_3](/assets/post_imgs/1x1 Conv_3.png)
     
 
 파라미터 수를 147,456개에서 40,960개로 효과적으로 줄일 수 있다.
