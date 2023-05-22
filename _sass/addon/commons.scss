@@ -929,6 +929,9 @@ $sidebar-display: 'sidebar-display';
       border-radius: 50%;
     }
   } /* .sidebar-bottom */
+  background: url('/assets/img/sea.jpg');
+  background-size: 100% 100%;
+  background-position: center;
 } /* #sidebar */
 
 @media (hover: hover) {
