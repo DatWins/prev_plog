@@ -3,7 +3,7 @@ title: 'FM: Factorization Machine'
 categories: [AI, Recommendation System]
 date: 2023-04-03-2:17:00 +0900
 summary: General Predictor + Latent Factor Model
-tags: [Context-aware Recsys, Factorization Machine]
+tags: [Context-aware Recsys, Factorization Machine, Latent Factor Model]
 ---
 > **General Predictor에 Latent Factor Model을 추가한 모델.**
 
@@ -69,7 +69,7 @@ $$
     - Polynomial Regression
         
         $$
-        \hat y(x)=\left(w_0+\sum_{i=1}^n w_i x_i\blue{+\sum_{i=1}^n \sum_{j=i+1}^n w_{i j} x_i x_j}\right), \quad w_i, w_{i j} \in \mathbb{R}
+        \hat y(x)=\left(w_0+\sum_{i=1}^n w_i x_i{+\sum_{i=1}^n \sum_{j=i+1}^n w_{i j} x_i x_j}\right), \quad w_i, w_{i j} \in \mathbb{R}
         $$
         
         ![FM](/assets/post_imgs/FM_3.png)
@@ -131,7 +131,7 @@ ex) 유저 수가 $U$명, 영화의 수가 $M$개일 때
 ### FM의 시간 복잡도
 
 $$
-\begin{aligned}& \tt\sum_{i=1}^n \sum_{j=i+1}^n\left\langle\mathbf{v}_i, \mathbf{v}_j\right\rangle x_i x_j \quad\quad \quad\quad\quad\quad\quad\quad\blue{\Longrightarrow O(kn^2)} \\= & \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n\left\langle\mathbf{v}_i, \mathbf{v}_j\right\rangle x_i x_j-\frac{1}{2} \sum_{i=1}^n\left\langle\mathbf{v}_i, \mathbf{v}_i\right\rangle x_i x_i \\= & \tt\frac{1}{2}\left(\sum_{i=1}^n \sum_{j=1}^n \sum_{f=1}^k v_{i, f} v_{j, f} x_i x_j-\sum_{i=1}^n \sum_{f=1}^k v_{i, f} v_{i, f} x_i x_i\right) \\= & \tt\frac{1}{2} \sum_{f=1}^k\left(\left(\sum_{i=1}^n v_{i, f} x_i\right)\left(\sum_{j=1}^n v_{j, f} x_j\right)-\sum_{i=1}^n v_{i, f}^2 x_i^2\right) \\= & \tt\frac{1}{2} \sum_{f=1}^k\left(\left(\sum_{i=1}^n v_{i, f} x_i\right)^2-\sum_{i=1}^n v_{i, f}^2 x_i^2\right)\quad\quad\blue{\Longrightarrow O(kn)}\end{aligned}
+\begin{aligned}& \tt\sum_{i=1}^n \sum_{j=i+1}^n\left\langle\mathbf{v}_i, \mathbf{v}_j\right\rangle x_i x_j \quad\quad \quad\quad\quad\quad\quad\quad{\Longrightarrow O(kn^2)} \\= & \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n\left\langle\mathbf{v}_i, \mathbf{v}_j\right\rangle x_i x_j-\frac{1}{2} \sum_{i=1}^n\left\langle\mathbf{v}_i, \mathbf{v}_i\right\rangle x_i x_i \\= & \tt\frac{1}{2}\left(\sum_{i=1}^n \sum_{j=1}^n \sum_{f=1}^k v_{i, f} v_{j, f} x_i x_j-\sum_{i=1}^n \sum_{f=1}^k v_{i, f} v_{i, f} x_i x_i\right) \\= & \tt\frac{1}{2} \sum_{f=1}^k\left(\left(\sum_{i=1}^n v_{i, f} x_i\right)\left(\sum_{j=1}^n v_{j, f} x_j\right)-\sum_{i=1}^n v_{i, f}^2 x_i^2\right) \\= & \tt\frac{1}{2} \sum_{f=1}^k\left(\left(\sum_{i=1}^n v_{i, f} x_i\right)^2-\sum_{i=1}^n v_{i, f}^2 x_i^2\right)\quad\quad{\Longrightarrow O(kn)}\end{aligned}
 $$
 
 어떻게 수식을 정리하여 시간복잡도를 줄일 수 있었나?
