@@ -1,7 +1,7 @@
 ---
 title: '1 x 1 Convolution'
 categories: ['AI','Computer Vision']
-date: 2023-01-13 15:39:00 +0999
+date: 2023-01-13 15:39:00 +0900
 tags: ['Convolution Neural Network', 'Bottle-neck']
 ---
 
