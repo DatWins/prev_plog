@@ -88,7 +88,7 @@ ex) 광고 클릭 데이터가 존재하고 사용할 수 있는 feature가 총 
     
     $$
     \hat{y}(\mathrm{x})
-    =w_0+w_{\mathrm{ESPN}}+w_{\mathrm{Nike}}+w_{\text {Male }}+\blue{\mathrm{v}_{\mathrm{ESPN}} \cdot \mathrm{v}_{\mathrm{Nike}}\\
+    =w_0+w_{\mathrm{ESPN}}+w_{\mathrm{Nike}}+w_{\text {Male }}+{\mathrm{v}_{\mathrm{ESPN}} \cdot \mathrm{v}_{\mathrm{Nike}}\\
     +\mathrm{v}_{\mathrm{ESPN}} \cdot \mathrm{v}_{\text {Male }}+\mathrm{v}_{\mathrm{Nike}} \cdot \mathrm{v}_{\text {Male }}}
     $$
     
@@ -100,7 +100,7 @@ ex) 광고 클릭 데이터가 존재하고 사용할 수 있는 feature가 총 
     
     $$
     \hat{y}(\mathrm{x})
-    =w_0+w_{\mathrm{ESPN}}+w_{\mathrm{Nike}}+w_{\text {Male }}+\blue{\mathrm{v}_{\mathrm{ESPN}, \mathrm{A}} \cdot \mathrm{v}_{\mathrm{Nike}, \mathrm{P}}\\
+    =w_0+w_{\mathrm{ESPN}}+w_{\mathrm{Nike}}+w_{\text {Male }}+{\mathrm{v}_{\mathrm{ESPN}, \mathrm{A}} \cdot \mathrm{v}_{\mathrm{Nike}, \mathrm{P}}\\
     
     +\mathrm{v}_{\mathrm{ESPN}, \mathrm{G}} \cdot \mathrm{v}_{\text {Male,P }}+\mathrm{v}_{\mathrm{Nike}, \mathrm{G}} \cdot \mathrm{v}_{\mathrm{Male}, \mathrm{A}}}
     $$
