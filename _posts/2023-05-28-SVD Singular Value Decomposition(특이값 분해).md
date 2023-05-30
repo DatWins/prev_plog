@@ -5,6 +5,7 @@ categories: [AI Math, 선형대수]
 tags: [Collaborative Filtering, Matrix Decomposition, Singular Value Decomposition]
 ---
 > 한 줄 요약: 2차원 행렬을 두 개의 잠재요인 행렬과 하나의 대각행렬로 분해하는 기법
+
 - **2차원 행렬 분해 기법**
     - 유저 잠재요인 행렬 ⇒ 유저 임베딩
     - 잠재요인 대각행렬  ⇒ 임베딩의 중요도
@@ -43,7 +44,7 @@ $$
 $\Sigma$를 일부만 사용한다.
 
 $$
-⁍
+\tt Truncated \ \  SVD: R \approx \widehat{U} \Sigma_k \widehat{V^T}=\hat{R}
 $$
 
 $\Sigma$는 중요도로 정렬되어 있기 때문에, 상위 k개만 활용하여 기존의 행렬을 거의 유사하게 나타낼 수 있다.
@@ -73,3 +74,6 @@ $\widehat R$은 축소된 $\widehat U, \widehat {V^T}, \Sigma_k$에 의해 계�
     Imputation에 의해 데이터 왜곡 발생 시 성능 저하
     
     행렬의 entry가 매우 적을 때 SVD를 적용하면 과적합 되기 쉽다.
+
+
+[참고하면 좋은 자료 -- SVD의 의미](https://angeloyeo.github.io/2019/08/01/SVD.html)
