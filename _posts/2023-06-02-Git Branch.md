@@ -11,21 +11,28 @@ tags: [Git, Branch, Merge]
 
 여러 Branch를 합치는 방법 — Merge
 
-## merge 방법에 따른 차이
+## merge
+**branch의 모든 기록 보존, merge에 대한 기록 추가.**  
 
-### merge
-> branch의 모든 기록 보존, merge에 대한 기록 추가.
 - 이 방법을 사용하면 merge에 대한 commit이 하나 생성되고 어느 시점에 merge를 진행했는지 쉽게 알 수 있다.
 - branch가 늘어나고 여러 번의 merge가 생기게 되면, 그래프가 복잡해져 **커밋 히스토리(Commit History)**를 파악하기 더욱 어려워질 수 있다.
-### squash and merge
-> 여러 commit 기록 하나로 합치기, merge기록 남기지 않기.  
-> 지저분한 커밋 이력들을 삭제하면서 master branch로 합칠 때 사용한다.
+
+## squash and merge
+
+ **여러 commit 기록 하나로 합치기, merge기록 남기지 않기.**  
+
+ 지저분한 커밋 이력들을 삭제하면서 master branch로 합칠 때 사용한다.
+
 - merge할 때 여러 commit들을 하나로 합친다.    
     Squash를 하게 되면 모든 커밋 이력이 하나의 커밋으로 합쳐지며 **사라진다.**        
 - merge에 대한 이력은 남기지 않는다.
-### rebase and merge
-> 여러 commit 기록 남기기, merge 기록 남기지 않기.  
-> **기존의 커밋 이력을 유지하면서도, 깔끔하게 하나의 흐름으로 관리하고자 할 때 사용한다.**
+
+## rebase and merge
+
+**여러 commit 기록 남기기, merge 기록 남기지 않기.**  
+
+기존의 커밋 이력을 유지하면서도, 깔끔하게 하나의 흐름으로 관리하고자 할 때 사용한다.
+
 - **일반적으로 가장 많이 사용된다.**
 - merge에 대한 이력이 남지 않는다.
     
@@ -45,10 +52,13 @@ tags: [Git, Branch, Merge]
 내가 branch를 분기한 이후, 기존의 branch가 수정된 경우
 </summary>
 
-    1. 내 branch에 기존 branch를 pull해서 conflict 해결하기.
-        - 내가 작성한 커밋을 절대 변경하고 싶지 않은 경우
-        - 내가 작성한 커밋 기록은 유지한채, Merge라는 기능을 통해 합쳐졌다라는 기록을 같이 남기게 된다.
-    2. merge할 때 rebase and merge하기. ← 더 나은 방법.
+1. 내 branch에 기존 branch를 pull해서 conflict 해결하기.<br>
+
+- 내가 작성한 커밋을 절대 변경하고 싶지 않은 경우<br>
+- 내가 작성한 커밋 기록은 유지한채, Merge라는 기능을 통해 합쳐졌다라는 기록을 같이 남기게 된다.  <br>
+
+2. merge할 때 rebase and merge하기. ← 더 나은 방법.
+
 </details>
 
 ### Conflict가 발생한다면?
@@ -62,7 +72,7 @@ tags: [Git, Branch, Merge]
     CVN의 해결방법과 유사하다.
     
 
-### 원격 브랜치 가져오기
+## 원격 브랜치 가져오기
 
 - **`git remote update` 원격 저장소 갱신**
     
@@ -79,7 +89,7 @@ tags: [Git, Branch, Merge]
     `-f`: 문제가 발생하더라도 강제로 진행한다.
     
 
-### branch 합치기, 병합하기
+## branch 합치기, 병합하기
 
 1. **`git checkout -b issue1` branch 생성하고 변경하기**
     - 위 명령어는 아래의 두 가지 명령어를 한 번에 수행한 것이다.
