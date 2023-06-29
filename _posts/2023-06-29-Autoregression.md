@@ -18,7 +18,7 @@ $$
 
 ## 종류
 
-### **Moving Average(이동평균)**
+### Moving Average(이동평균)
 
 가장 간단한 방법
 
@@ -39,7 +39,7 @@ $$
 - ${-y_{n-K+1}}$: 가장 오래된 값 삭제
 - ${+y_{n+1}}$ : 최근 값 추가
 
-### **Weighted Moving Average**
+### Weighted Moving Average
 
 **단순히 평균이 아니라 최근 값에 대한 가중치를 더 크게 주는 방법**
 
@@ -52,7 +52,7 @@ $$
     $$
     
 
-### **Learning-based Moving Average**
+### Learning-based Moving Average
 
 **Weighted moving average에서의 가중치를 학습하는 방법**
 
