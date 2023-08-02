@@ -4,7 +4,8 @@ date: 2023-03-30-00:19:00 +0900
 categories: [AI Math, 선형대수]
 tags: [Collaborative Filtering, Matrix Decomposition, Singular Value Decomposition]
 ---
-> 한 줄 요약: 2차원 행렬을 두 개의 잠재요인 행렬과 하나의 대각행렬로 분해하는 기법
+> 간단 요약  
+> 2차원 행렬을 두 개의 잠재요인 행렬과 하나의 대각행렬로 분해하는 기법
 
 - **2차원 행렬 분해 기법**
     - 유저 잠재요인 행렬 ⇒ 유저 임베딩
