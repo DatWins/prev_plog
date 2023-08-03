@@ -4,7 +4,7 @@ date: 2023-03-30 12:19:00 +0900
 categories: [AI,Recommendation System]
 tags: [collaborative filtering, matrix factorization]
 ---
-> ✔️ 간단 요약
+> 간단 요약
 > 
 > 
 > 행렬을 인수분해 후 재생성하여 결측치를 예측하는 방법

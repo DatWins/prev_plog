@@ -6,7 +6,8 @@ tags: [Collaborative Filtering, Matrix Decomposition, Singular Value Decompositi
 ---
 > 간단 요약  
 > 2차원 행렬을 두 개의 잠재요인 행렬과 하나의 대각행렬로 분해하는 기법
-
+{: .prompt-info }
+> eigen vector, eigen value
 - **2차원 행렬 분해 기법**
     - 유저 잠재요인 행렬 ⇒ 유저 임베딩
     - 잠재요인 대각행렬  ⇒ 임베딩의 중요도
