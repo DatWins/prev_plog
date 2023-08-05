@@ -1,5 +1,5 @@
 ---
-title: Git Branch
+title: Git Branch는 무엇이고, 무엇을 위해 사용하는가?
 date: 2022-10-09-07:49:00 +0900
 categories: [Project Management,Git]
 tags: [Git, Branch, Merge]
