@@ -65,7 +65,7 @@ $$
 위의 모델링은 Polynomial Logistic Regression과 거의 동일하다.
 
 $$
-\hat y(x)=\left(w_0+\sum_{i=1}^n w_i x_i\blue{+\sum_{i=1}^n \sum_{j=i+1}^n w_{i j} x_i x_j}\right), \quad w_i, w_{i j} \in \mathbb{R}
+\hat y(x)=\left(w_0+\sum_{i=1}^n w_i x_i{+\sum_{i=1}^n \sum_{j=i+1}^n w_{i j} x_i x_j}\right), \quad w_i, w_{i j} \in \mathbb{R}
 $$
 
 이 모델로는 $n^2$만큼 학습 파라미터가 늘어나게 된다.
