@@ -722,14 +722,7 @@ $sidebar-display: 'sidebar-display';
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  // background: var(--sidebar-bg);
-  &[data-mode='light'] {
-    background: url('/assets/img/snow_light.jpg');
-  }
-
-  &[data-mode='dark'] {
-    background: url('/assets/img/snow_dark.jpg');  
-  }
+  background: var(--sidebar-bg);
   // background: url('/assets/img/snow_light.jpg');
   background-size: 100% 100%;
   background-position: center;
