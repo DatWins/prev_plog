@@ -9,7 +9,7 @@
   --main-border-color: rgb(44, 45, 45);
 
   /* Common color */
-  --text-color: rgb(175, 176, 177);
+  --text-color: rgb(198, 198, 198);
   --text-muted-color: rgb(107, 116, 124);
   --heading-color: #cccccc;
   --blockquote-border-color: rgb(66, 66, 66);
@@ -36,10 +36,10 @@
   /* Sidebar */
   // --sidebar-bg: radial-gradient(circle, #242424 0%, #1d1f27 100%);
   --sidebar-bg: url('/assets/img/snow_dark2.jpg');
-  --sidebar-muted-color: #6d6c6b;
+  --sidebar-muted-color: #aaaaaa;
   --sidebar-active-color: rgb(255, 255, 255, 0.8);
   --nav-cursor-color: rgb(183, 182, 182);
-  --sidebar-btn-bg: rgb(117, 116, 116, 0.2);
+  --sidebar-btn-bg: rgba(174, 174, 174, 0.2);
 
   /* Topbar */
   --topbar-text-color: var(--text-color);
