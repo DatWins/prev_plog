@@ -157,27 +157,6 @@ tags: [Wrap-up Report, BoostCampAITech]
         평점 예측 결과가 1~10의 범위를 초과하는 값들을 각각 1, 10으로 조정해주어 성능을 향상시켰습니다.
         
     
-    | Model | RMSE | Valid Loss | Epochs | Batch Size | Learning Rate | ETC. |
-    | --- | --- | --- | --- | --- | --- | --- |
-    | FM | 2.4605 | 2.444 | 10 | 1024 | 1e-3 | FM Default |
-    | FFM |  | 2.513 | 10 | 1024 | 1e-3 | FFM Default |
-    | NCF | 2.2327 | 2.212 | 100 | 64 | 1e-3 | early stop |
-    | DCN | 2.2594 | 2.243 | 100 | 64 | 1e-3 | early stop |
-    | WDN | 2.383 | 2.413 | 50 | 64 | 1e-3 | early stop |
-    | CNN_FM | 2.2184 | 2.204 | 10 | 64 | 5e-4 |  |
-    | DeepCoNN | 2.2014 | 2.18 | 10 | 32 |  | conv_1d_out_dim 50 |
-    | Random
-    Forest
-    Regressor | 2.28 |  |  |  |  | 5-fold CV |
-    | LightGBM
-    Regressor | 2.2458 | 2.2311 | 3500 |  | 0.05 | 5-fold CV |
-    | XGBoost
-    Regressor | 2.2838 | 2.2 | 2000 |  | 0.05 |  |
-    | CatBoost
-    Regressor | 2.1297 |  | 3500 |  | 0.05 | Missing Data Imputed |
-    | CatBoost
-    Regressor,
-    DeepCoNN,FM | 2.1207 |  |  |  |  | Weighted Sum, Final Model |
 
 2. **시연 결과**
     
