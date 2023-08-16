@@ -1,6 +1,7 @@
 ---
 title: Book Rating Prediction Wrap-up Report
 categories: [Review, BoostCamp AI Tech]
+date: 2023-05-26-21:14:00 +0900
 tags: [Wrap-up Report, BoostCampAITech]
 ---
 ## 1. 프로젝트 개요
