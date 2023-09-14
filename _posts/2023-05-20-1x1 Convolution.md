@@ -1,6 +1,6 @@
 ---
 title: '1 x 1 Convolution'
-categories: ['AI','Computer Vision']
+categories: ['DL Algorithm','Computer Vision']
 date: 2023-01-13 15:39:00 +0900
 tags: ['Convolution Neural Network', 'Bottle-neck']
 ---

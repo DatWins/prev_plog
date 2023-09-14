@@ -1,7 +1,7 @@
 ---
 title: 'MF: Matrix Factorization'
 date: 2023-03-30 12:19:00 +0900
-categories: [AI,Recommendation System]
+categories: [DL Algorithm,Recommendation System]
 tags: [collaborative filtering, matrix factorization]
 ---
 > 간단 요약

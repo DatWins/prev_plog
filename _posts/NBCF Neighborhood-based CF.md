@@ -1,7 +1,7 @@
 ---
 title: 'NBCF: Neighborhood-based CF(이웃 기반 협업 필터링)'
 date: 2023-03-29-14:03:00 +0900
-categories: [AI, Recommendation System]
+categories: [DL Algorithm, Recommendation System]
 tags: [NBCF,UBCF, IBCF, Collaborative Filtering]
 ---
 Neighborhood-based CF 혹은 Memory Based CF라고 부르기도 한다.

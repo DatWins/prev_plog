@@ -2,7 +2,7 @@
 title: 'WDN: Wide & Deep Network'
 date: 2023-04-04-17:38:00 +0900
 tags: [Deep Model, Linear Model]
-categories: [AI, Recommendation System]
+categories: [DL Algorithm, Recommendation System]
 ---
 Wide & Deep Learning for Recommender Systems
 
