@@ -6,6 +6,7 @@ tags: [PyTorch, Overview]
 pin: true
 ---
 > Naver BoostCamp AI Tech에서 학습한 내용을 재구성했습니다.  
+> 개요가 중요하기 때문에, 우측 하단의 ToC(목차)를 활용하면 글의 내용을 습득하기 더 쉬울 것입니다.  
 > 해당 게시글은 지속적으로 업데이트할 예정입니다.
 {: .prompt-info }
 
