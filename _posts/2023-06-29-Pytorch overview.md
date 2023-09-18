@@ -5,9 +5,7 @@ categories: [DL Framework, PyTorch]
 tags: [PyTorch, Overview]
 pin: true
 ---
-  
-> 더 많이 배울수록 더 많이 잊어버리는 문제점을 해결하고자
-> 개념들의 관계를 정립하기 위한 개요 글을 작성하게 되었습니다.
+> Naver BoostCamp AI Tech에서 학습한 내용을 재구성했습니다.  
 > 해당 게시글은 지속적으로 업데이트할 예정입니다.
 {: .prompt-info }
 
@@ -40,6 +38,15 @@ pin: true
     - Learning rate : 한 번에 얼마나 반영할 것인가?
 
 ### 5. 모델 학습 (1 epoch에 일어나는 일)
+
+```python
+    for epoch in range(epochs):
+		optimizer.zero_grad()
+		outputs = model(inputs)
+		loss = criterion(outputs, labels) 
+		loss.backward()
+		optimizer.step()
+```
 
 1. `optimizer.zero_grad()` : 이전 epoch의 미분값 초기화
     - optimizer.zero_grad()를 안하면 어떤 일이 일어날까?
