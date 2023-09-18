@@ -3,6 +3,7 @@ title: Deep Learning 개요 (feat. PyTorch)
 date: 2023-03-13-09:58:00 +0900
 categories: [DL Framework, PyTorch]
 tags: [PyTorch, Overview]
+pin: true
 ---
   
 > 더 많이 배울수록 더 많이 잊어버리는 문제점을 해결하고자
