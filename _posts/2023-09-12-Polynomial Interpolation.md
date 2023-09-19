@@ -3,6 +3,7 @@ title: Polynomial Interpolation(보간 다항식)
 date: 2023-09-12-23:39:00 +0900
 categories: [AI Math, Numerical Analysis]
 tags: [Interpolation, Lagrange Interpolation, Newton Polynomial interpolation]
+math: true
 ---
 # Linear Interpolation
 
