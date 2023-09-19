@@ -16,7 +16,7 @@ pin: true
 ### 1. 데이터 준비
 
 - [Tensor](https://osmin625.github.io/posts/Tensor/)
-- [PyTorch Datasets & DataLoaders](https://www.notion.so/PyTorch-Datasets-DataLoaders-5b1bb513ae23495ea3bca27d8541e92d?pvs=21)
+- [PyTorch Datasets & DataLoaders](https://osmin625.github.io/posts/PyTorch-Datasets-&-DataLoaders/)
 
 ### 2. 모델 정의 ([torch.nn.Module](https://www.notion.so/torch-nn-Module-fc3f68055ff1435d9c0de1567fc852bb?pvs=21))
 
