@@ -3,6 +3,7 @@ title: 'FFM: Field-aware Factorization Machine'
 date: 2023-04-03-14:17:00 +0900
 tags: [Context-aware Recsys, Factorization Machine, Latent Factor Model, Field-aware Factorization Machine, CTR Prediction]
 categories: [DL Algorithm, Recommendation System]
+math: true
 ---
 
 ## 개요

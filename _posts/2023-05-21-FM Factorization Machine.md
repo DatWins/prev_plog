@@ -4,6 +4,7 @@ categories: [DL Algorithm, Recommendation System]
 date: 2023-04-03-2:17:00 +0900
 summary: General Predictor + Latent Factor Model
 tags: [Context-aware Recsys, Factorization Machine, Latent Factor Model]
+math: true
 ---
 > **General Predictor에 Latent Factor Model을 추가한 모델.**
 

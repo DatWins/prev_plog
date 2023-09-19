@@ -3,6 +3,7 @@ title: Autoregression
 date: 2023-06-28-16:10:00 +0900
 categories: [AI Math, Statistics]
 tags: [Autoregression,Autoregressive Model]
+math: true
 ---
 회귀 분석의 관점에서 과거의 데이터를 보고 현재 또는 미래의 결과를 예측하는 것
 
