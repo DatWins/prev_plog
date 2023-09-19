@@ -56,7 +56,7 @@
 
 {% if page.math %}
   <!-- MathJax -->
-  <script>
+  <!-- <script>
     /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
     MathJax = {
       tex: {
@@ -74,7 +74,30 @@
     };
   </script>
   <script src="{{ site.data.assets[origin].polyfill.js | relative_url }}"></script>
-  <script id="MathJax-script" async src="{{ site.data.assets[origin].mathjax.js | relative_url }}"></script>
+  <script id="MathJax-script" async src="{{ site.data.assets[origin].mathjax.js | relative_url }}"></script> -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            TeX: {
+              equationNumbers: {
+                autoNumber: "AMS"
+              }
+            },
+            tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$'],['\\[', '\\]'] ],
+            processEscapes: true,
+        }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+            alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+            alert("Math Processing Error: "+message[1]);
+        });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 {% endif %}
 
 <!-- commons -->
