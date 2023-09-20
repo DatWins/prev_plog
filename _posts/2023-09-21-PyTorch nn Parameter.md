@@ -2,7 +2,7 @@
 title: PyTorch에서 weight를 저장하는 객체 - nn.Parameter
 date: 2023-03-13-9:58:00 +0900
 categories: [ML Framework, PyTorch]
-tags: [PyTorch, save]
+tags: [PyTorch, Parameter, weight]
 math: true
 # img_path: /assets/post_imgs/
 # image:lqip: image_filename
