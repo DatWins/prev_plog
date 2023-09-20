@@ -22,9 +22,9 @@ pin: true
 
 [PyTorch **모델 불러오기**](https://osmin625.github.io/posts/PyTorch-%EB%AA%A8%EB%8D%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/)
 
-- Input size, Output size 정의 [nn.Parameter](https://www.notion.so/nn-Parameter-53ff052828634ab198c57731649fe73f?pvs=21)
-- Forward 연산 정의 [PyTorch Functions](https://www.notion.so/PyTorch-Functions-1547d3e39c754068a174bc68f84fa87b?pvs=21)
-- [Backward](https://www.notion.so/Backward-bbfb5deede994f9f832d5ebe72e53955?pvs=21) 연산 정의
+- Input size, Output size 정의 [nn.Parameter](https://osmin625.github.io/posts/PyTorch-nn-Parameter/)
+- Forward 연산 정의
+- [Backward](https://osmin625.github.io/posts/Backward/) 연산 정의
 
 ### 3. 하이퍼 파라미터 지정 [**Hyperparameter Tuning**](https://www.notion.so/Hyperparameter-Tuning-13b3e8b1be0146c9939fd58f466abb43?pvs=21)
 
