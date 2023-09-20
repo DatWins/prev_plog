@@ -20,7 +20,7 @@ pin: true
 
 ### 2. 모델 정의 ([torch.nn.Module](https://www.notion.so/torch-nn-Module-fc3f68055ff1435d9c0de1567fc852bb?pvs=21))
 
-[PyTorch **모델 불러오기**](https://www.notion.so/PyTorch-8907c68e40d2445ca3452f1c4f26a00c?pvs=21)
+[PyTorch **모델 불러오기**](https://osmin625.github.io/posts/PyTorch-%EB%AA%A8%EB%8D%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/)
 
 - Input size, Output size 정의 [nn.Parameter](https://www.notion.so/nn-Parameter-53ff052828634ab198c57731649fe73f?pvs=21)
 - Forward 연산 정의 [PyTorch Functions](https://www.notion.so/PyTorch-Functions-1547d3e39c754068a174bc68f84fa87b?pvs=21)
