@@ -257,7 +257,7 @@ $$
 \begin{aligned}P_n(x)=f\left(x_0\right) & +\left(x-x_0\right) f\left[x_0, x_1\right]+\cdots \\& +\left(x-x_0\right)\left(x-x_1\right) \cdots\left(x-x_{n-1}\right) f\left[x_0, x_1, \ldots, x_n\right]\end{aligned}\end{aligned}
 $$
 
-여기에서 중요한 점은, 기호화를 함으로써 값을 재활용할 수 있게 되었다.
+여기에서 중요한 점은, 기호화를 함으로써 값을 재활용할 수 있게 되었다는 것이다.
 
 또한, 기존의 값을 활용하여 다음 값을 구할 수 있게 되었다.
 
