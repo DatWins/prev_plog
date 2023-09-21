@@ -26,7 +26,7 @@ pin: true
 - Forward 연산 정의
 - [Backward](https://osmin625.github.io/posts/Backward/) 연산 정의
 
-### 3. 하이퍼 파라미터 지정 [**Hyperparameter Tuning**](https://www.notion.so/Hyperparameter-Tuning-13b3e8b1be0146c9939fd58f466abb43?pvs=21)
+### 3. 하이퍼 파라미터 지정 [**Hyperparameter Tuning**](https://osmin625.github.io/posts/Hyperparameter_tuning/)
 
 ### 4. 모델 평가 기준 및 Optimizer 설정
 
