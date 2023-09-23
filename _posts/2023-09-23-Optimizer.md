@@ -6,27 +6,26 @@ tags: ['Optimizer', 'Adam', 'Local minima', 'Saddle point','Gradient Descent']
 math: true
 img_path: /assets/post_imgs/
 ---
-> **간단 요약**
+> **간단 요약**  
+> Loss의 미분값을 파라미터에 어떻게 반영할 지에 대한 방법  
 > 
-> 
-> Loss의 미분값을 파라미터에 어떻게 반영할 지에 대한 방법
-> 
-> - 반영 방법 : loss의 미분 값을 파라미터에 어떻게 반영할 것인가?
-> - Learning rate : 한 번에 얼마나 반영할 것인가?
+> - 반영 방법 : loss의 미분 값을 파라미터에 어떻게 반영할 것인가?  
+> - Learning rate : 한 번에 얼마나 반영할 것인가?  
+{: .prompt-info }
 
 ## Background: **Gradient Descent(GD)에서의 Issue**
 
 ### 1. Local minima, Saddle point
 
-![Optimizer](optimizer.png){: w="900" h="500" }
+![Optimizer](optimizer.png){: w="700" h="400" }
 
 실제로는 Local Minima보단 안장점(saddle point)이 문제인 경우가 더 많다.
 
 local minima가 되기 위해선 모든 변수 방향에서 loss가 증가해야 하는데, 이는 흔치 않다.
 
-![Optimizer](optimizer1.png){: w="700" h="400" }
+![Optimizer](optimizer1.png){: w="400" h="250" }
 
-![Optimizer](optimizer2.png){: w="700" h="400" }
+![Optimizer](optimizer2.png){: w="400" h="250" }
 
 대신 위의 상황에서 gradient descent 알고리즘이 평평한 곳에 머물러버리는 문제가 발생할 수 있다.
 
