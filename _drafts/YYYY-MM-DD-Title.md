@@ -13,6 +13,6 @@ image:
 > ✔️ 간단 요약
 > 
 > 
-{ :.prompt-info }
+{: .prompt-info }
 > 
 

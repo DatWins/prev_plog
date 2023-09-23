@@ -30,10 +30,10 @@ pin: true
 
 ### 4. 모델 평가 기준 및 Optimizer 설정
 
-1. 모델 평가 기준 : loss를 어떻게 계산할 것인가? [손실 함수(Loss Function)](https://www.notion.so/Loss-Function-82e9c926f33a42a8a50ef8febd5c4ab6?pvs=21)
+1. 모델 평가 기준 : loss를 어떻게 계산할 것인가? [손실 함수(Loss Function)](https://osmin625.github.io/posts/Loss-function/)
     - 가장 간단하게 \|실제 값 - 예측 값\| 으로 하겠다! → MAE(Mean Absolute Error)
     - 값이 너무 큰가? MAE에 루트를 씌우자! → MSE(Mean Squared Error)
-2. [Optimizer](https://www.notion.so/Optimizer-39716b1340f748e48152500d7c60f67e?pvs=21) 설정
+2. [Optimizer](https://osmin625.github.io/posts/Optimizer/) 설정
     - 반영 방법 : loss의 미분값을 파라미터에 어떻게 반영할 것인가?
     - Learning rate : 한 번에 얼마나 반영할 것인가?
 
