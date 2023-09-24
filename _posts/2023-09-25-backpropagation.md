@@ -1,194 +1,187 @@
 ---
-title: 손실 함수(Loss Function)에 대해 알아보자.
-date: 2022-11-19-00:04:00 +0900
+title: Back Propagation(오차 역전파 알고리즘)
+date: 2022-04-22-23:21:00 +0900
 categories: ['AI Knowledge', 'Loss Function' ]
-tags: ['Loss Function', 'MAE', 'MSE', 'RMSE', 'Cross-Entropy', 'Regression','Classification']
+tags: ['Loss Function', 'Gradient Descent', 'Back Propagation']
 math: true
 img_path: /assets/post_imgs/
 ---
-> ✔️ 간단 요약  
-> 신경망의 학습 중 받는 벌점의 기준  
-> 회귀와 분류 문제에서 다른 loss function을 사용한다.  
-{: .prompt-info }
-> Gradient, MAE, MSE, RMSE
+**이 알고리즘으로 인해 ML Network에서의 학습이 가능하다는 것이 알려져, 암흑기에 있던 신경망 학계가 다시 관심을 받게 되었다.**
 
-**Loss : 예측 값과 실제 값의 차이**
+출력층에서 시작하여 역방향으로 오류를 전파한다는 뜻에서 오류 역전파라 부른다.
 
-신경망의 학습 중 오답에 대해 받는 벌점
+1. 내가 뽑고자 하는 target값과 실제 모델이 계산한 출력의 차이를 계산한다.
+2. 오차값을 다시 뒤로 전파해가면서 각 노드가 가지고 있는 변수들을 갱신한다.
 
-두 값의 차이는 단순히 뺄셈의 절댓값을 의미하는 것은 아니며, 상황에 따라 다양하게 나타난다.
+![bp](bp.png)
 
-ex) 정답과 완전히 동떨어진 대답을 하면 더 많은 벌점을 받는다.
+직관적인 이해는 끝났다. 이제 제대로 이해해보자.
 
-### **Loss Function**
+오차 역전파가 중요한 이유를 알고 싶다면, [여기](https://osmin625.github.io/posts/%EC%88%98%EC%B9%98-%EB%AF%B8%EB%B6%84/)를 클릭하여 오차 역전파가 없을 시에 발생하는 문제점을 이해하자.
 
-신경망이 벌점을 받는 기준
+## 오차 역전파
 
-신경망의 학습 과정에서 가중치 $\mathbf w$를 평가하는 **함수**.
+신경망을 학습하는 방법.
 
-나는 손실 함수가 함수라는 것을 제대로 인지하지 못했을 때 모델 평가 Metric과 헷갈렸기 때문에, 손실 **함수**라는 것을 다시 한번 인지하고 지나가자.
+연쇄 법칙을 활용하여 수치 미분에서의 연산량을 대폭 감소시킨다.
 
-2차원 그래프로 비유했을 때, 가중치 $\mathbf w$는 x좌표에 해당하고 손실 함수의 값은 y좌표에 해당한다.
+수치 미분과 마찬가지로 손실 함수 위에서의 가중치의 기울기를 알게 해준다.
 
-손실 함수의 최솟값이 되는 지점에 $\mathbf w$를 위치시키는 것이 신경망의 목표이다.
+즉, 해당 가중치가 얼마나 오차에 영향을 끼치는지 알게 해준다.
 
-고등 수학을 빌려 설명하자면, 단순히 미분값이 0이 되는 지점을 파악하여 손실 함수의 최솟값을 구하면 된다.
+(기울기에 대한 손실 함수의 미분)
 
-하지만 고차원에서의 손실 함수 미분은 쉽지 않을 뿐더러, 함수 전체에서 미분값이 0이 되는 지점을 바로 찾아내는 것은 현실적으로 불가능하다.
+특정 가중치 w에 대해, 오차 L 위에서의 기울기는 $\partial L\over \partial w$이다.
 
-따라서, 신경망은 $\mathbf w$에서 손실 함수의 기울기를 측정하여 loss가 낮아지는 방향으로 가중치를 조금씩 이동하는 전략을 사용한다.
+### 연쇄 법칙(chain rule)
 
-이 때의 조금을 결정하는 것이 Optimizer이다.
-
-해결하고자 하는 문제에 맞게 loss function을 설정해 사용해주면 된다.
-
-![Loss](loss_function.png)
-
-신경망 학습을 통해 손실 함수 $J$의 최저점을 찾아야 한다.
-
-## **신경망의 학습 알고리즘**
-
-1. 훈련 데이터 입력
-2. 매개변수 $\mathbf w$를 난수로 초기화
-3. while (true):
-    1. 손실 함수$J(\mathbf w)$ 계산(loss 계산)
-    2. loss를 낮추는 방향 $\Delta \mathbf w$ 계산
-    3. $\mathbf w = \mathbf w + \Delta \mathbf w$
-4. return 가중치(매개변수)
-
-## **손실 함수 J(w)의 조건**
-
-- w가 훈련 집합에 있는 샘플을 모두 맞히면, $J(w) = 0$이다.
-- w가 틀리는 샘플이 많을수록 $J(w)$의 값이 크다.
-
-위의 조건을 만족하는 수식은 아주 다양하기 때문에, 적절한 손실 함수를 선택해야 한다.
-
-## 손실 함수의 종류
-
-### 회귀(Regression)
-
-- **MAE(Mean Absolute Error)** — $\left|정답 - 예측값\right|$의 평균
-    
-    > **간단 요약**
-    > 
-    > 
-    > 틀린 만큼 벌점을 얻는다.
-    > 
-    > 모든 지점에서 그래디언트는 동일하다.
-    > 
-    
-    가장 간단한 손실 함수.
-    
-    제곱을 취하지 않기 때문에, 모든 오차는 그대로 반영된다.
-    
-    직관적으로 말하자면, 오차만큼 벌점이 쌓인다.
-    
-    기울기 관점으로, 모든 가중치에서 그래디언트의 크기가 동일하다.
-    
-    따라서 MSE나 RMSE에 비해 상대적으로 이상치에 대해 Robust하다.
-    
-    (이상치도 오차만큼만 벌점이 쌓이기 때문)
-    
-    $$
-    \frac{1}{n} \sum_{i=1}^n\left|{y_i}-\hat y_i\right|
-    $$
-    
-    
-    ![Loss_function](loss_function1.png)
-- **MSE(Mean Squared Error)** — $(정답 - 예측값)^2$의 평균
-    
-    > **간단 요약**
-    > 
-    > 
-    > 정답과의 거리가 멀수록 더 많은 벌점을 부여하자!
-    > 
-    > 오차를 제곱 하면 되겠네?
-    > 
-    > 정답에서 멀어질수록 그래디언트의 크기가 증가한다.
-    > 
-    
-    $$
-    M S E=\frac{1}{n} \sum_{i=1}^n\left({y_i}-\hat y_i\right)^2
-    $$
-    
-    ![Loss_function](loss_function2.png)
-    
-    미니 배치 단위로 처리(샘플의 오차를 평균 낸다.)
-    
-    $$
-    \begin{aligned}J\left(\mathbf{U}^1, \mathbf{U}^2\right) & =\frac{1}{|M|} \sum_{\mathbf{x} \in M}\|\mathbf{y}-\mathbf{0}\|^2 \\& =\frac{1}{|M|} \sum_{\mathbf{x} \in M}\left\|\mathbf{y}-\tau_2\left(\mathbf{U}^2 \tau_1\left(\mathbf{U}^1 \mathbf{x}^{\mathrm{T}}\right)\right)\right\|^2\end{aligned}
-    $$
-    
-    - 오차값에 제곱을 취하기 때문에 0~1 사이의 값은 상대적으로 작게 반영되고, 1보다 큰 값은 상대적으로 더 크게 반영된다.
-    - 학습이 느려지거나 학습이 안되는 상황을 초래할 가능성이 있다.
-    - 정답과 예측값의 차이가 클수록 더 크게 반영되기 때문에, 이상치에 매우 민감하다.
-- **RMSE(Root MSE)** — $\sqrt{(정답 - 예측값)^2\text {의 평}균}$
-    
-    > **간단 요약**
-    > 
-    > 
-    > MSE에 루트 씌운 값.
-    > 
-    > 얼핏 MAE와 동일한 것 아니야? 생각할 수 있지만, 계산 순서에서 차이가 발생하고, $1\over n$이 아니라 $1\over \sqrt n$을 했다는 점이 MAE와 다르다.
-    > 
-    
-    $$
-    R M S E=\sqrt{\frac{1}{n} \sum_{i=1}^n\left(\hat{y_i}-y_i\right)^2}
-    $$
-    
-    ![Loss_function](loss_function3.png)
-    
-    MSE와 마찬가지로 각 오차값의 크기에 따라 다른 그래디언트를 가지게 된다.
-    
-
-![Loss_function](loss_function4.png)
-
-### 분류(Classification)
-
-**Entropy**
-
-확률 분포의 무작위성(불확실성)을 측정하는 함수
+**합성 함수의 미분은 합성 함수를 구성하는 각 함수의 미분의 곱으로 나타낼 수 있다.**
 
 $$
-H(x)=-\sum_{i=1, k} P\left(e_i\right) \log P\left(e_i\right)
+{\partial z\over \partial x} = {\partial z\over \partial t}{\partial t\over \partial x}
 $$
 
-- **Cross-Entropy**
+합성 함수
+
+여러 함수로 구성된 함수
+
+- ex) $z = (x + y)^2$
+    - $z = t^2$
+    - $t = x + y$
+
+### 순전파, 역전파, 국소적 계산
+
+ex) $f(x) = y$
+
+![bp](bp1.png)
+
+**f에 x를 집어넣으면 y가 튀어나온다.**
+
+위의 그림처럼 어딘가에서 갑자기 등장한 $L$이라는 함수를 $y$로 미분한 값($\partial L\over \partial y$)이 제공된다면?
+
+우리는 $L$이라는 함수를 모르지만, $x$로 미분한 값을 알 수 있다.
+
+연쇄법칙을 활용하면 된다.
+
+$$
+{\partial L\over \partial x} = {\partial L\over \partial y}{\partial y\over \partial x}
+$$
+
+우리는 $\partial L\over \partial y$를 알고 있으니, $\partial y\over \partial x$만 계산하면 된다.
+
+${\partial y\over \partial x} = f'(x)$이므로, x에 대한 함수인 $f(x)$를 미분하면 된다.
+
+ex) $f(x) = x^2 ⇒ f'(x) = 2x$ 
+
+이 때, 위의 예시에서 왼쪽에서 오른쪽으로 진행하는 단계를 **순전파(forward propagation)**,
+
+오른쪽에서 왼쪽으로 진행하는 단계를 **역전파(backward propagation)**이라고 한다.
+
+국소적 계산
+
+전체에서 어떤 일이 벌어지든 상관없이 자신과 관계된 정보만을 결과로 출력할 수 있다.
+
+위의 예시처럼, 각 단계에서는 그저 $f(x)$의 미분값만 곱해서 하류로 흘러보낸 것이 전부다.
+
+단순한 국소적 계산이 연결되어 전체를 구성하는 복잡한 계산을 수행하게 된다.
+
+### 덧셈 노드에서의 역전파
+
+ex) $z = x + y$
+
+- $\partial z\over \partial x$ = 1
+- $\partial z\over \partial y$ = 1
+
+![bp](bp2.png)
+
+상류에서 내려온 신호인 $\partial L\over \partial z$에 $\partial z\over \partial x$를 곱함으로써 $\partial L\over \partial x$을 구했다.
+
+단순한 덧셈 연산이기 때문에 미분값은 1이다.
+
+즉, 덧셈에서는 상류에서 내려온 값을 그대로 하류로 전달한다.
+
+### 곱셈 노드에서의 역전파
+
+ex) $z = xy$
+
+- ${\partial z\over \partial x} = y$
+- ${\partial z\over \partial y} = x$
+
+이므로, 
+
+![bp](bp3.png)
+이 된다.
+
+즉, 단순한 곱셈 노드는 상류에서 내려온 신호를 교차시켜 곱한 후, 다시 하류로 보낸다.
+
+하지만 본질은 미분이다.
+
+$z = x^2$의 경우, 미분값은 $2x$가 되는 것을 명심하자.
+
+### 연쇄 법칙과 계산 그래프
+
+![bp](bp4.png)
+
+![bp](bp5.png)
+
+처음에 예시로 들었던 함수 $z = (x+y)^2$를 그래프화 한 것이다.
+
+### 결론
+
+역전파는 오차(손실 함수)를 상류에서 하류로 내려보내면서 각 가중치가 손실 함수에서의 기울기를 알 수 있도록 해주는 기법이다.
+
+이 때 수많은 노드와 복잡한 활성화 함수 등이 각 노드에서 국소적 계산을 한다.
+
+이런 값들이 누적되고 확산되어 단 한번의 신경망 계산(역방향)만으로도 모든 가중치와 편향을 갱신할 수 있다.
+
+곱셈 노드, 덧셈 노드뿐만 아니라 exp 노드, log 노드 등 수많은 노드들이 있지만,
+
+결국 **기본 원리는 상류 노드에 해당 노드에서의 미분 값을 찾아서 곱한 뒤, 하류로 흘려보내는 것**이 전부이다.
+
+그러므로 수치 미분보다는 당연히 빠르다.
+
+![bp](bp6.png)
+
+- 구현 코드
     
-    **정보량을 상징한다. → 불공정성 문제 해결**
+    ```python
+    class MulLayer:
+        # 곱셈 계층
     
-    두 확률 분포 P와 Q가 다른 정도를 측정하는 함수
+        def __init__(self) -> None:
+            self.x = None
+            self.y = None
     
-    $$
-    H(P, Q)=-\sum_{i=1, k} P\left(e_i\right) \log Q\left(e_i\right)
-    $$
+        def forward(self, x, y):
+            # 순전파, x와 y의 값을 저장해야만 backward때 사용할 수 있다.
+            self.x = x
+            self.y = y
+            out = x * y
     
-    - 공정한 주사위에는 특별한 정보가 존재하지 않는다.
+            return out
+    
         
-        $$
-        -\left(\frac{1}{6} \log \frac{1}{6}+\ldots+\frac{1}{6} \log \frac{1}{6}\right)=1.7918
-        $$
-        
-    - 찌그러진 주사위에서는 특정 값이 더 잘나온다는 정보가 추가된다.
-        
-        공정한 주사위와 찌그러진 주사위의 교차 엔트로피
-        
-        $$
-        -\left(\frac{1}{6} \log \frac{1}{2}+\frac{1}{6} \log \frac{1}{10}+\cdots+\frac{1}{6} \log \frac{1}{10}\right)=2.0343
-        $$
-        
-- **Binary Cross-Entropy**
+        def backward(self, dout):
+            # 역전파로 상위 계층에서의 미분 값 * 반대 노드의 값을 출력한다.
+            dx = dout * self.y
+            dy = dout * self.x
     
-    `tf.nn.sigmoid_cross_entropy_with_logits( )`
+            return dx, dy
     
-    $$
-    B C E=-\frac{1}{N} \sum_{i=0}^N y_i \cdot \log \left(\hat{y_i}\right)+\left(1-y_i\right) \cdot \log \left(1-\hat{y_i}\right)
-    $$
+    class AddLayer:
+        # 덧셈 계층
     
-- **Categorical Cross-Entropy**
+        def __init__(self) -> None:
+            pass
     
-    `tf.nn.softmax_cross_entropy_with_logits_v2( )`
+        def forward(self, x, y):
+            # 순전파, x와 y 값을 저장하지 않아도 된다.
+            out = x + y
+            return out
     
-    $$
-    C C E=-\frac{1}{N} \sum_{i=0}^N \sum_{j=0}^J y_j \cdot \log \left(\hat{y_j}\right)+\left(1-y_j\right) \cdot \log \left(1-\hat{y_j}\right)
-    $$
+        def backward(self, dout):
+            dx = dout * 1
+            dy = dout * 1
+    
+            return dx, dy
+    ```
