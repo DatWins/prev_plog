@@ -1,5 +1,5 @@
 ---
-title: 모델 학습 결과를 개선하고 싶을 때
+title: 모델의 성능이 더이상 오르지 않을 때 (Hyper-Parameter Tuning)
 date: 2023-03-13-09:58:00 +0900
 categories: [AI Knowledge, Hyperparameter]
 tags: [Hyperparameter Tuning]
