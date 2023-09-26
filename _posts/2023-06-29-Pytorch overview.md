@@ -33,25 +33,9 @@ pin: true
 1. 모델 평가 기준 : loss를 어떻게 계산할 것인가? [손실 함수(Loss Function)](https://osmin625.github.io/posts/Loss-function/)
 2. [Optimizer](https://osmin625.github.io/posts/Optimizer/) 설정
 
-### 5. 모델 학습 (1 epoch에 일어나는 일)
+### 5. 모델 학습
 
-```python
-    for epoch in range(epochs):
-		optimizer.zero_grad()
-		outputs = model(inputs)
-		loss = criterion(outputs, labels) 
-		loss.backward()
-		optimizer.step()
-```
-
-1. `optimizer.zero_grad()` : 이전 epoch의 미분값 초기화
-    - optimizer.zero_grad()를 안하면 어떤 일이 일어날까?
-    - 매 batch step마다 항상 필요할까?
-2. `outputs = model(inputs)` : 모델 예측 수행
-3. `loss = criterion(outputs, labels)` : 손실 함수를 통한 loss 계산
-4. `loss.backward()` :  loss의 미분값 계산
-5. `optimizer.step()` : 미분값을 parameter에 반영
-
+[1 epoch에 일어나는 일](https://osmin625.github.io/posts/1-epoch/)
 [PyTorch **Multi-GPU 학습**](https://www.notion.so/PyTorch-Multi-GPU-cddece8aedc84060ab5baceb59821da0?pvs=21) 
 
 ### 6. 모델 성능 평가
