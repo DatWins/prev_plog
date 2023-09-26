@@ -35,8 +35,8 @@ pin: true
 
 ### 5. 모델 학습
 
-[1 epoch에 일어나는 일](https://osmin625.github.io/posts/1-epoch/)
-[PyTorch **Multi-GPU 학습**](https://www.notion.so/PyTorch-Multi-GPU-cddece8aedc84060ab5baceb59821da0?pvs=21) 
+- [1 epoch에 일어나는 일](https://osmin625.github.io/posts/1-epoch/)  
+- [PyTorch **Multi-GPU 학습**](https://www.notion.so/PyTorch-Multi-GPU-cddece8aedc84060ab5baceb59821da0?pvs=21) 
 
 ### 6. 모델 성능 평가
 
