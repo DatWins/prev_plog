@@ -18,7 +18,7 @@ pin: true
 - [Tensor](https://osmin625.github.io/posts/Tensor/)
 - [PyTorch Datasets & DataLoaders](https://osmin625.github.io/posts/PyTorch-Datasets-&-DataLoaders/)
 
-### 2. 모델 정의 ([torch.nn.Module](https://www.notion.so/torch-nn-Module-fc3f68055ff1435d9c0de1567fc852bb?pvs=21))
+### 2. 모델 정의 ([torch.nn.Module](https://osmin625.github.io/posts/PyTorch-%EB%AA%A8%EB%8D%B8-%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0/))
 
 [PyTorch **모델 불러오기**](https://osmin625.github.io/posts/PyTorch-%EB%AA%A8%EB%8D%B8-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/)
 
