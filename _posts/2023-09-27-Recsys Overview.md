@@ -47,7 +47,7 @@ pin: true
     <details markdown="1">
     <summary>Supervised Learning Model</summary>
 
-    #### **ML based CF**
+    **ML based CF**
 
     - [Naive Bayes Classification](https://www.notion.so/Naive-Bayes-Classification-33b7db10c9314bcf8c7dda33785846e9?pvs=21)
     - [GBM: Gradient Boosting Machine](https://www.notion.so/GBM-Gradient-Boosting-Machine-ad2a50e8de754365ae06f0ac90adcaa1?pvs=21)
@@ -56,7 +56,7 @@ pin: true
         - [LGBM: LightGBM](https://www.notion.so/LGBM-LightGBM-26aed012b6a5416aac0b4650b0155e5e?pvs=21)
         - [CatBoost](https://www.notion.so/CatBoost-474c3b0d5e124ae19aff470924694636?pvs=21)
 
-    #### **DL based CF**
+    **DL based CF**
 
     <details markdown="1">
     <summary>Background</summary>
@@ -171,7 +171,7 @@ pin: true
     - 따라서, user-free 모델은 전통적인 MF 계열의 모델보다 실용적이라고 볼 수 있다.
     </details>
 
-    #### [**Latent Factor Model(Embedding)**](https://www.notion.so/Latent-Factor-Model-Embedding-7e8eb7413b9e45ceb5ed2a16151c12c0?pvs=21)
+    [**Latent Factor Model(Embedding)**](https://www.notion.so/Latent-Factor-Model-Embedding-7e8eb7413b9e45ceb5ed2a16151c12c0?pvs=21)
 
     - [SVD: Singular Value Decomposition(특이값 분해)](https://www.notion.so/SVD-Singular-Value-Decomposition-2bc5621a4b8b423587cce5c72387332a?pvs=21)
     - [MF: Matrix Factorization](https://www.notion.so/MF-Matrix-Factorization-e4a47b3afa0c4159ab9ad24920f2f6a5?pvs=21)
@@ -187,7 +187,7 @@ pin: true
             - [**SGNS: Skip-Gram with Negative Sampling**](https://www.notion.so/SGNS-Skip-Gram-with-Negative-Sampling-e3a03df0c93d493a8a266043d4ac3b76?pvs=21)
         - [Item2Vec](https://www.notion.so/Item2Vec-9ce90b51bfce4be49bf049f7a4c1e962?pvs=21)
 
-    #### [Clustering(군집화)](https://www.notion.so/Clustering-18087dfdaaec466086fcff5a1808aa86?pvs=21)
+    [Clustering(군집화)](https://www.notion.so/Clustering-18087dfdaaec466086fcff5a1808aa86?pvs=21)
 
     - [KNN: K-Nearest Neighbor(K-최근접 이웃)](https://www.notion.so/KNN-K-Nearest-Neighbor-K-e3a1dcf5f76c4c33b8f12432a11c466d?pvs=21)
     - [ANN: Approximate Nearest Neighbor](https://www.notion.so/ANN-Approximate-Nearest-Neighbor-9a41dc0e2de54f7ab83ee8f990f5c086?pvs=21)
