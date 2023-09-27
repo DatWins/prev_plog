@@ -42,11 +42,11 @@ pin: true
 # [CF: Collaborative Filtering(협업 필터링)](https://www.notion.so/CF-Collaborative-Filtering-fd1b3079e33d4bf28c3d6e11a833842e?pvs=21)
 
 - [NBCF: Neighborhood-based CF(이웃 기반 협업 필터링)](https://www.notion.so/NBCF-Neighborhood-based-CF-4d0471ef262d4a7da8175e095c9f72a2?pvs=21)
-- [MBCF: Model based Collaborative Filtering(모델 기반 협업 필터링)](https://www.notion.so/MBCF-Model-based-Collaborative-Filtering-75c21283fe794ad48670abf344ae04b1?pvs=21)
+## [MBCF: Model based Collaborative Filtering(모델 기반 협업 필터링)](https://www.notion.so/MBCF-Model-based-Collaborative-Filtering-75c21283fe794ad48670abf344ae04b1?pvs=21)
     
-    ## Supervised Learning Model
+### Supervised Learning Model
 
-### ML based CF
+#### **ML based CF**
 
 - [Naive Bayes Classification](https://www.notion.so/Naive-Bayes-Classification-33b7db10c9314bcf8c7dda33785846e9?pvs=21)
 - [GBM: Gradient Boosting Machine](https://www.notion.so/GBM-Gradient-Boosting-Machine-ad2a50e8de754365ae06f0ac90adcaa1?pvs=21)
@@ -55,46 +55,47 @@ pin: true
     - [LGBM: LightGBM](https://www.notion.so/LGBM-LightGBM-26aed012b6a5416aac0b4650b0155e5e?pvs=21)
     - [CatBoost](https://www.notion.so/CatBoost-474c3b0d5e124ae19aff470924694636?pvs=21)
 
-### DL based CF
+#### **DL based CF**
 
-- **Background**
+<details>
+<summary>Background</summary>
     
-    **DL based CF의 장점**
-    
-    1. **Nonlinear Transformation**
-        - data의 non-linearity를 효과적으로 나타낼 수 있다.
-        - 복잡한 user-item interaction pattern을 효과적으로 모델링
-            
-            user의 선호도 예측 용이
-            
-    2. **Representation Learning**
-        - 사람이 직접 feature design하지 않아도 된다.
-        - 텍스트, 이미지, 오디오 등 다양한 종류의 정보를 추천 시스템에 활용할 수 있다.
-            - 과거 아이템의 이미지를 활용하여 새로운 아이템에 대한 특징 추출 가능
-            - 사용자가 남긴 텍스트를 활용하여 취향에 대한 특징 추출 가능
-            - 새로운 아이템이나 인기 없는 아이템도 추천이 가능
-            - 사용자에게 아이템을 왜 추천하는 이유에 대한 설명력이 증가
-            - 다양한 맥락 정보를 함께 활용하기 때문에 보다 정교한 추천이 가능
-    3. **Sequence Modeling**
-        - DNN은 자연어처리, 음성 신호 처리 등 sequential modeling task에서 성공적으로 적용된다.
-        - 추천 시스템에서 next-item prediction, session-based recommendation등에 사용된다.
-    4. **Various Architectures**
-        - CNN, RNN 등 비정형 데이터 특징 추출에 특화된 구조 활용이 가능하다.
-    5. **Flexibility**
-        - Tensorflow, PyTorch 등 다양한 DL 프레임워크 오픈
-        - 추천시스템 모델링 flexibility가 높으며 더 효율적으로 서빙할 수 있다.
-        - end-to-end 구조로써 Domain adaptation,Generative modeling등의 응용 모델 활용이 가능하다.
-    
-    **단점**
-    
-    1. **Interpretability** → Black Box
-    2. **Data Requirement** → 많은 양의 데이터 필요
-    3. **Extensive Hyperparameter Tuning** → 많은 시간 소요
-    
-    추천에서는 DL이 ML을 압도하지는 않는다. 
-    
-    추천을 수행할 때 Latency가 중요하기 때문에, 너무 복잡한 모델은 사용하지 못한다.
-    
+**DL based CF의 장점**
+
+1. **Nonlinear Transformation**
+    - data의 non-linearity를 효과적으로 나타낼 수 있다.
+    - 복잡한 user-item interaction pattern을 효과적으로 모델링
+        
+        user의 선호도 예측 용이
+        
+2. **Representation Learning**
+    - 사람이 직접 feature design하지 않아도 된다.
+    - 텍스트, 이미지, 오디오 등 다양한 종류의 정보를 추천 시스템에 활용할 수 있다.
+        - 과거 아이템의 이미지를 활용하여 새로운 아이템에 대한 특징 추출 가능
+        - 사용자가 남긴 텍스트를 활용하여 취향에 대한 특징 추출 가능
+        - 새로운 아이템이나 인기 없는 아이템도 추천이 가능
+        - 사용자에게 아이템을 왜 추천하는 이유에 대한 설명력이 증가
+        - 다양한 맥락 정보를 함께 활용하기 때문에 보다 정교한 추천이 가능
+3. **Sequence Modeling**
+    - DNN은 자연어처리, 음성 신호 처리 등 sequential modeling task에서 성공적으로 적용된다.
+    - 추천 시스템에서 next-item prediction, session-based recommendation등에 사용된다.
+4. **Various Architectures**
+    - CNN, RNN 등 비정형 데이터 특징 추출에 특화된 구조 활용이 가능하다.
+5. **Flexibility**
+    - Tensorflow, PyTorch 등 다양한 DL 프레임워크 오픈
+    - 추천시스템 모델링 flexibility가 높으며 더 효율적으로 서빙할 수 있다.
+    - end-to-end 구조로써 Domain adaptation,Generative modeling등의 응용 모델 활용이 가능하다.
+
+**단점**
+
+1. **Interpretability** → Black Box
+2. **Data Requirement** → 많은 양의 데이터 필요
+3. **Extensive Hyperparameter Tuning** → 많은 시간 소요
+
+추천에서는 DL이 ML을 압도하지는 않는다. 
+
+추천을 수행할 때 Latency가 중요하기 때문에, 너무 복잡한 모델은 사용하지 못한다.
+</details>    
 
 [MLP: Multilayer Perceptron(다층 퍼셉트론)](https://www.notion.so/MLP-Multilayer-Perceptron-e33b62a970784be2bcd83dab0b55e220?pvs=21) 계열 모델
 
@@ -140,30 +141,32 @@ pin: true
 - [BST: Behavior Sequence Transformer](https://www.notion.so/BST-Behavior-Sequence-Transformer-9b06a51043dd4d15bc565b8ef52eb7a2?pvs=21)
 - [TabNet](https://www.notion.so/TabNet-1e5c27561c974f6e80af1989a106cfde?pvs=21)
 
-## Unsupervised Learning Model
+### Unsupervised Learning Model
 
-- **Background : User-free Model**
-    
-    비지도학습 모델들 중, User-free 모델로 활용되는 경우가 많다.
-    
-    **User-free 모델의 장점 ($=\gamma_u$를 사용하지 않을 때의 장점)**
-    
-    1. **새로운 사용자에 대해 inference가 가능하다.**
-        
-        $\gamma_u$는 새로운 사용자가 발생할 때마다 재학습을 필요로 한다.
-        
-    2. **이력이 거의 없는 사용자에 대한 대응이 가능하다.**
-        
-        MF 계열의 모델은 이런 상황에서 $\gamma_u$가 제대로 학습되지 않으므로 성능이 좋지 않다.
-        
-    3. **CF 모델에서 종종 무시되곤 하는 sequential 시나리오에 대해 대응이 가능하다.**
-        
-        MF의 $\gamma_u$는 sequence를 고려하지 않는다.
-        
-    - 실제 추천 시스템의 deployment를 고려하면, 새로운 사용자가 발생할 때마다 재학습이 필요한 점은 큰 단점이다.
-    - 따라서, user-free 모델은 전통적인 MF 계열의 모델보다 실용적이라고 볼 수 있다.
+<details>
+<summary>Background : User-free Model</summary>
 
-### [Latent Factor Model(E**mbedding)**](https://www.notion.so/Latent-Factor-Model-Embedding-7e8eb7413b9e45ceb5ed2a16151c12c0?pvs=21)
+비지도학습 모델들 중, User-free 모델로 활용되는 경우가 많다.
+
+**User-free 모델의 장점 ($=\gamma_u$를 사용하지 않을 때의 장점)**
+
+1. **새로운 사용자에 대해 inference가 가능하다.**
+    
+    $\gamma_u$는 새로운 사용자가 발생할 때마다 재학습을 필요로 한다.
+    
+2. **이력이 거의 없는 사용자에 대한 대응이 가능하다.**
+    
+    MF 계열의 모델은 이런 상황에서 $\gamma_u$가 제대로 학습되지 않으므로 성능이 좋지 않다.
+    
+3. **CF 모델에서 종종 무시되곤 하는 sequential 시나리오에 대해 대응이 가능하다.**
+    
+    MF의 $\gamma_u$는 sequence를 고려하지 않는다.
+    
+- 실제 추천 시스템의 deployment를 고려하면, 새로운 사용자가 발생할 때마다 재학습이 필요한 점은 큰 단점이다.
+- 따라서, user-free 모델은 전통적인 MF 계열의 모델보다 실용적이라고 볼 수 있다.
+</details>
+
+#### [**Latent Factor Model(Embedding)**](https://www.notion.so/Latent-Factor-Model-Embedding-7e8eb7413b9e45ceb5ed2a16151c12c0?pvs=21)
 
 - [SVD: Singular Value Decomposition(특이값 분해)](https://www.notion.so/SVD-Singular-Value-Decomposition-2bc5621a4b8b423587cce5c72387332a?pvs=21)
 - [MF: Matrix Factorization](https://www.notion.so/MF-Matrix-Factorization-e4a47b3afa0c4159ab9ad24920f2f6a5?pvs=21)
@@ -171,15 +174,15 @@ pin: true
     - [ALS: Alternating Least Square](https://www.notion.so/ALS-Alternating-Least-Square-f7558a78197f4f1c8657aeaf6e5a29fd?pvs=21)
     - [BPR: Bayesian Personalized Ranking](https://www.notion.so/BPR-Bayesian-Personalized-Ranking-19396cb2510e4bdb935c62fb7e29d87e?pvs=21)
 
-[Feedback](https://www.notion.so/Feedback-bc67a3ec8d14494f84ff96524491fbee?pvs=21)
+    [Feedback](https://www.notion.so/Feedback-bc67a3ec8d14494f84ff96524491fbee?pvs=21)
 
-- [Word2Vec](https://www.notion.so/Word2Vec-c21d23fa76c8478f921fdc392f599f95?pvs=21)
-    - [**CBOW: Continous Bag of Word**](https://www.notion.so/CBOW-Continous-Bag-of-Word-d8b1a8e79e294cdb91f0edd1dccb9ac4?pvs=21)
-    - [**SG: Skip-Gram**](https://www.notion.so/SG-Skip-Gram-0efdda659ed345f299b0ee4b0ded2c26?pvs=21)
-    - [**SGNS: Skip-Gram with Negative Sampling**](https://www.notion.so/SGNS-Skip-Gram-with-Negative-Sampling-e3a03df0c93d493a8a266043d4ac3b76?pvs=21)
-- [Item2Vec](https://www.notion.so/Item2Vec-9ce90b51bfce4be49bf049f7a4c1e962?pvs=21)
+    - [Word2Vec](https://www.notion.so/Word2Vec-c21d23fa76c8478f921fdc392f599f95?pvs=21)
+        - [**CBOW: Continous Bag of Word**](https://www.notion.so/CBOW-Continous-Bag-of-Word-d8b1a8e79e294cdb91f0edd1dccb9ac4?pvs=21)
+        - [**SG: Skip-Gram**](https://www.notion.so/SG-Skip-Gram-0efdda659ed345f299b0ee4b0ded2c26?pvs=21)
+        - [**SGNS: Skip-Gram with Negative Sampling**](https://www.notion.so/SGNS-Skip-Gram-with-Negative-Sampling-e3a03df0c93d493a8a266043d4ac3b76?pvs=21)
+    - [Item2Vec](https://www.notion.so/Item2Vec-9ce90b51bfce4be49bf049f7a4c1e962?pvs=21)
 
-### [Clustering(군집화)](https://www.notion.so/Clustering-18087dfdaaec466086fcff5a1808aa86?pvs=21)
+#### [Clustering(군집화)](https://www.notion.so/Clustering-18087dfdaaec466086fcff5a1808aa86?pvs=21)
 
 - [KNN: K-Nearest Neighbor(K-최근접 이웃)](https://www.notion.so/KNN-K-Nearest-Neighbor-K-e3a1dcf5f76c4c33b8f12432a11c466d?pvs=21)
 - [ANN: Approximate Nearest Neighbor](https://www.notion.so/ANN-Approximate-Nearest-Neighbor-9a41dc0e2de54f7ab83ee8f990f5c086?pvs=21)
@@ -188,11 +191,11 @@ pin: true
     - [IVF: Inverted File Index](https://www.notion.so/IVF-Inverted-File-Index-c382c3cb19634e7cb7e2af6d445cf686?pvs=21)
     - [PQ: Product Quantization — Compression](https://www.notion.so/PQ-Product-Quantization-Compression-cea6b89b3ff14201bbaa75536a6840b3?pvs=21)
 
-**Clustering의 경우 다른 추천 방법론과 함께 사용하여 효과적인 추천 수행이 가능하다.**
+    **Clustering의 경우 다른 추천 방법론과 함께 사용하여 효과적인 추천 수행이 가능하다.**
 
-- 군집내의 다른 사용자가 선호하는 아이템 추천
-- 군집화 이후 협력 필터링(Collaborative Filtering) 사용을 통해 예측 정확도 향상
-- 비슷한 사용자 군집의 데이터를 추출하여 아이템 선호도를 계산하고, 이를 사전 확률(prior probability)로 활용하여 베이지안 방법론 적용
+    - 군집내의 다른 사용자가 선호하는 아이템 추천
+    - 군집화 이후 협력 필터링(Collaborative Filtering) 사용을 통해 예측 정확도 향상
+    - 비슷한 사용자 군집의 데이터를 추출하여 아이템 선호도를 계산하고, 이를 사전 확률(prior probability)로 활용하여 베이지안 방법론 적용
     
 
 ## RL(강화 학습)

@@ -16,3 +16,9 @@ image:
 {: .prompt-info }
 > 
 
+
+<details>
+<summary>제목</summary>
+
+내용
+</details>
