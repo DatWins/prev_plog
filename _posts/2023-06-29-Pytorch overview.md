@@ -1,15 +1,13 @@
 ---
-title: Deep Learning 개요 (feat. PyTorch)
+title: PyTorch 개요
 date: 2023-03-13-09:58:00 +0900
 categories: [DL Framework, PyTorch]
 tags: [PyTorch, Overview]
 pin: true
 ---
 > Naver BoostCamp AI Tech에서 학습한 내용을 재구성했습니다.  
-> 해당 게시글은 지속적으로 업데이트할 예정입니다.
+> 해당 게시글은 지속적으로 업데이트할 예정입니다.  
 {: .prompt-info }
-
-## 모델 개요
 
 ## 구현 개요(PyTorch)
 
