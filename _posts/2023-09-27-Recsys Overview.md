@@ -9,6 +9,7 @@ pin: true
 ---
 > Naver BoostCamp AI Tech에서 학습한 내용을 재구성했습니다.  
 > 해당 게시글은 지속적으로 업데이트할 예정입니다.  
+> 노션에 정리했던 내용을 복습하며 블로그에 조금씩 업로드하고 있습니다.  
 {: .prompt-info }
 
 ### [추천 시스템](https://www.notion.so/28ff356653df482aa3618eff753a0024?pvs=21)
