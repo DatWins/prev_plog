@@ -57,7 +57,7 @@ pin: true
 
 #### **DL based CF**
 
-<details>
+<details markdown="1">
 <summary>Background</summary>
     
 **DL based CF의 장점**
@@ -143,7 +143,7 @@ pin: true
 
 ### Unsupervised Learning Model
 
-<details>
+<details markdown="1">
 <summary>Background : User-free Model</summary>
 
 비지도학습 모델들 중, User-free 모델로 활용되는 경우가 많다.

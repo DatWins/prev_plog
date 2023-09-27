@@ -17,7 +17,7 @@ image:
 > 
 
 
-<details>
+<details markdown="1">
 <summary>제목</summary>
 
 내용
