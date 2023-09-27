@@ -30,7 +30,7 @@ pin: true
     
     [TF-IDF 기반 추천](https://www.notion.so/TF-IDF-0465ef82197b423e92cbd7516e964d7b?pvs=21)
     
-- [**BM25**](https://www.notion.so/BM25-857f76f951ef44e6a8ffa08c022dbbcb?pvs=21)
+- [BM25](https://www.notion.so/BM25-857f76f951ef44e6a8ffa08c022dbbcb?pvs=21)
 - [Word2Vec](https://www.notion.so/Word2Vec-c21d23fa76c8478f921fdc392f599f95?pvs=21)
 
 #### 2. Similarity — **특성화된 아이템이 서로 얼마나 비슷한가**
@@ -44,7 +44,8 @@ pin: true
 - ## [NBCF: Neighborhood-based CF(이웃 기반 협업 필터링)](https://www.notion.so/NBCF-Neighborhood-based-CF-4d0471ef262d4a7da8175e095c9f72a2?pvs=21)
 - ## [MBCF: Model based Collaborative Filtering(모델 기반 협업 필터링)](https://www.notion.so/MBCF-Model-based-Collaborative-Filtering-75c21283fe794ad48670abf344ae04b1?pvs=21)
     
-    ### Supervised Learning Model
+    <details markdown="1">
+    <summary>Supervised Learning Model</summary>
 
     #### **ML based CF**
 
@@ -141,9 +142,11 @@ pin: true
     - DCN: Deep & Cross Network
     - [BST: Behavior Sequence Transformer](https://www.notion.so/BST-Behavior-Sequence-Transformer-9b06a51043dd4d15bc565b8ef52eb7a2?pvs=21)
     - [TabNet](https://www.notion.so/TabNet-1e5c27561c974f6e80af1989a106cfde?pvs=21)
+    </details>
 
-    ### Unsupervised Learning Model
-
+    <details markdown='1'>
+    <summary>Unsupervised Learning Model</summary>
+    <br>
     <details markdown="1">
     <summary>Background : User-free Model</summary>
 
@@ -198,7 +201,7 @@ pin: true
         - 군집내의 다른 사용자가 선호하는 아이템 추천
         - 군집화 이후 협력 필터링(Collaborative Filtering) 사용을 통해 예측 정확도 향상
         - 비슷한 사용자 군집의 데이터를 추출하여 아이템 선호도를 계산하고, 이를 사전 확률(prior probability)로 활용하여 베이지안 방법론 적용
-    
+    </details>
 
 ## RL(강화 학습)
 
