@@ -3,6 +3,8 @@ title: 추천 시스템 개요
 date: 2023-09-27-13:53:00 +0900
 categories: [DL Algorithm, Recommendation System]
 tags: [Recsys, Overview]
+math: true
+img_path: /assets/post_imgs/
 pin: true
 ---
 > Naver BoostCamp AI Tech에서 학습한 내용을 재구성했습니다.  
