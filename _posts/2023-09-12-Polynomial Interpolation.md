@@ -271,7 +271,7 @@ $$
 이를 점화식의 형태로 정리하면 다음과 같다.
 
 $$
-p_{n+1}(x)=p_n(x)+f\left[x_0, x_1, \cdots, x_n, x_{{n+1}}\right] \prod_{j=0}^n(x-x_j)
+p_{n+1}(x)=p_n(x)+f[x_0, x_1, \cdots, x_n, x_{{n+1}}] \prod_{j=0}^n(x-x_j)
 $$
 
 # 2. Error in polynomial interpolation
@@ -346,7 +346,7 @@ $$
     f(x)-P(x)=\frac{f^{n+1}(c_x)}{(n+1) !}\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)
     $$
     
-    - 최대 오차는 $\max \left|\frac{f^{n+1}(c_x)}{(n+1) !}\right| \cdot \max \left|\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)\right|$
+    - 최대 오차는 $\max \|\frac{f^{n+1}(c_x)}{(n+1) !}\| \cdot \max \|\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)\|$
 
 ---
 
@@ -413,6 +413,7 @@ $$
     $$
     f(x)=\frac{1}{1+25 x^2}
     $$
+    
     ![Alt text](polynomial_interpolation3.png)
     
     

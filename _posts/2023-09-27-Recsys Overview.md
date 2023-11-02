@@ -12,14 +12,14 @@ pin: true
 > 노션에 정리했던 내용을 복습하며 블로그에 조금씩 업로드하고 있습니다.  
 {: .prompt-info }
 
-### [추천 시스템](https://www.notion.so/28ff356653df482aa3618eff753a0024?pvs=21)
+### [추천 시스템](https://osmin625.github.io/posts/%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C/)
 
-### [추천 시스템 평가 패러다임](https://www.notion.so/d7eaebd990c74c4cbb65b652ce90757c?pvs=21)
+### [추천 시스템 평가 패러다임](https://osmin625.github.io/posts/%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%ED%8F%89%EA%B0%80-%EC%A7%80%ED%91%9C/)
 
 ![recsys](ro.png)
 # Rule Base
 
-[인기도 기반 추천](https://www.notion.so/ec2915f1cf4344a495fa78c55605deb2?pvs=21)
+[인기도 기반 추천](https://osmin625.github.io/posts/%EC%9D%B8%EA%B8%B0%EB%8F%84-%EA%B8%B0%EB%B0%98-%EC%B6%94%EC%B2%9C/)
 
 [연관 분석(Association Analysis)](https://www.notion.so/Association-Analysis-6ca43cfdd8da4ad89cdefa807331c4ff?pvs=21)
 
