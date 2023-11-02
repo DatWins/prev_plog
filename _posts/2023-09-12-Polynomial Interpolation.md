@@ -420,10 +420,9 @@ $$
     불연속 함수를 근사할 때 불연속 값 근처에서 나타나는 불일치 현상
     ![Alt text](polynomial_interpolation4.png)
     
+![Alt text](polynomial_interpolation4-1.png)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2fe91022-1a16-4c09-a59e-19b069be3e9d/1db13aae-7e15-4dd8-9405-80577152de70/Untitled.png)
-
-### **Piecewise Polynomials Interpolation**
+### Piecewise Polynomials Interpolation
 
 여러 개의 데이터를 하나의 추정 함수로 표현하지 않고, 구간 별로 추정 함수를 구하는 것
 
