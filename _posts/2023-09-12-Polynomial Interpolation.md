@@ -70,7 +70,7 @@ $$
 - 느린 계산 시간
 - 오차 발생
 
-### **Lagrange Interpolation((라그랑주 보간법)**
+### **Lagrange Interpolation(라그랑주 보간법)**
 
 연립 방정식을 풀지 않고 다항식을 결정하는 방법
 
@@ -150,7 +150,7 @@ Q. 연산량이 기존 방법과 비교했을 때 늘어나는가, 줄어드는�
 
 그렇다면, 식을 처음부터 다시 계산하지 않는 방법은 없을까?
 
-결국 라그랑주 보간법은 각 점을 지나는 함수의 기울기를 합산하는 방식이기 때문에, 반복되는 기울기 연산을 제거한다면 연산을 줄일 수 있다. 이를 위해 Divided Difference이 쓰인다.
+결국 라그랑주 보간법은 각 점을 지나는 함수의 기울기를 합산하는 방식이기 때문에, 기울기가 중복으로 계산되는 지점을 제거하여 연산량을 줄일 수 있다. 이를 위해 Divided Difference이 쓰인다.
 
 ## **Newton’s divided differences interpolation**
 
@@ -261,43 +261,265 @@ $$
 
 또한, 기존의 값을 활용하여 다음 값을 구할 수 있게 되었다.
 
+최종적으로 뉴턴 공식을 일반화하여 정리하면 다음과 같은 형태가 된다.
+
+$$
+\begin{aligned}P_n(x) & =f\left[x_0\right]+f\left[x_0, x_1\right]\left(x-x_0\right)+\cdots\\
+&\ \ \ \ \ \ \ \ \ \ \ \ \ \ +f\left[x_0, \cdots, x_n\right]\left(x-x_0\right) \cdots\left(x-x_{n-1}\right) \\& =f\left[x_0\right]+\sum_{k=1}^n f\left[x_0, \cdots, x_k\right]\left(x-x_0\right) \cdots\left(x-x_{k-1}\right) \\& =f\left[x_0\right]+\sum_{k=1}^n f\left[x_0, \cdots, x_k\right] \prod_{i=0}^{k-1}\left(x-x_i\right)\end{aligned}
+$$
+
+이를 점화식의 형태로 정리하면 다음과 같다.
+
+$$
+p_{n+1}(x)=p_n(x)+f\left[x_0, x_1, \cdots, x_n, x_{{n+1}}\right] \prod_{j=0}^n(x-x_j)
+$$
+
+# 2. Error in polynomial interpolation
+
+보간 다항식은 결국 실제 함수에 대한 추정이기 때문에, 오차가 존재한다.
+
+라그랑주 보간법의 오차를 계산해보자.
+
+앞에서 $P_n(x)$를 다음과 같이 정리했다.
+
+$$
+\begin{matrix}P_n(x)&=&L_0(x) f\left(x_0\right)+L_1(x) f\left(x_1\right)+\cdots L_n(x) f\left(x_n\right)\\
+&=&\sum_{i=0}^n L_{i(x)} f\left(x_i\right)
+\end{matrix}
+$$
+
+- $f(x):$  구간 $[a,b]$에서 정의된 함수(실제 함수)
+- $p_n(x): n+1$ $n+1$$f(x)$의 보간 다항식
+
+이라 했을 때, 다음이 성립한다.
+
+$$
+f(x)=P_n(x) + \frac{\left(x-x_0\right)\left(x-x_1\right) \cdots\left(x-x_n\right)}{(n+1) !} f^{(n+1)}\left(c_x\right)
+$$
+
+- $c_x : [a,b]$ 구간 내 임의의 점
+- 증명 과정
+    1. 실제 함수$f(x)$와 보간 다항식 $P_n(x)$의 차이에 대한 함수를 $R_n(x)$라 하자. $(x \neq x_k)$
+        
+        즉, $f(x) = P_n(x) + R_n(x)$가 성립하는 상황에서,
+        
+        $R_n(x)$는 $x_k$마다 0이 되기 때문에 다음과 같이 정의할 수 있다.
+        
+        $$
+        R_n(x)=C \prod_{k=0}^n\left(x-x_k\right)
+        $$
+        
+        - $C$는 상수를 의미한다.
+    2. 새로운 함수 $F(x)$를
+        
+        $$
+        F(x) = f(x) - P_n(x) - R_n(x)
+        $$
+        
+        라고 할 때, 
+        
+    3. **롤의 정리(Rolle's Theorem)**에 의해 $\mathrm{n}$개 점에서 함수가 0이면, $\mathrm{n}-1$차 미분의 값이 0인 점이 존재한다.
+        
+        $\mathrm{g}(\mathrm{t})$ 는 $x, x_0, x_1, \ldots, x_n$ 의 구간으로 $\mathrm{n}+2$개의 함수가 0 인 점이 존재하므로, $\mathrm{n}+1$ 차 미분이 0 인 점 $c_x$가 존재한다.
+        
+        $$
+        f^{n+1}(c_x)-P^{n+1}(c_x)-[f(x)-P(x)] \frac{d^{n+1}}{d t^{n+1}}\left[\Pi_{i=0}^n \frac{t-x_i}{x-x_i}\right]_{t=c_x}
+        $$
+        
+        - $\mathrm{P}$ 는 최대 $\mathrm{n}$차식이므로 $P^{n+1}=0$
+    4.  $g^{n+1}(c_x)=0=f^{n+1}(c_x)-0-f(x)-P(x) ! \Pi_{i=0}^n \frac{1}{x-x_i}$
+        - $\left(t-x_i\right)$ 는 $\mathrm{n}+1$ 차항이므로 $\mathrm{n}+1$번 미분하면 $(\mathrm{n}+1)!$
+    5. 위 식을 $\mathrm{f}(\mathrm{x})$ 에 대해 정리하면 다음과 같다.
+        
+        $$
+        f(x)=P(x)+\frac{f^{n+1}(c_x)}{(n+1) !}\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)
+        $$
+        
+    
+    결론적으로, 오차(실제 함수 - 보간 다항식)는 다음과 같이 정의된다.
+    
+    $$
+    e_n(x)=f(x)-P_n(x)
+    $$
+    
+    $$
+    f(x)-P(x)=\frac{f^{n+1}(c_x)}{(n+1) !}\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)
+    $$
+    
+    - 최대 오차는 $\max \left|\frac{f^{n+1}(c_x)}{(n+1) !}\right| \cdot \max \left|\left(x-x_0\right)\left(x-x_1\right) \ldots\left(x-x_n\right)\right|$
+
 ---
 
-### Error in polynomial interpolation
+- $f(x):$  구간 $[a,b]$에서 정의된 함수(실제 함수)
+- $p_n(x): n+1$ $n+1$$f(x)$의 보간 다항식
+    
+    이라 했을 때, 오차(실제 함수 - 보간 다항식)는 다음과 같이 정의된다.
+    
 
 $$
 e_n(x)=f(x)-p_n(x)
 $$
 
-- $f(x):$  구간 $[a,b]$에서 정의된 함수
-- $p_n(x): n+1$ $n+1$$f(x)$의 보간 다항식
-    
-    따라서 다음이 성립한다.
-    
-    $$
-    \begin{aligned}
-    & p_{n+1}\left(x_i\right)=f\left(x_1\right), \quad i=0,1,2, \cdots, n \\
-    & p_{n+1}(\bar{x})=f(\bar{x})
-    \end{aligned}
-    $$
-    
-    뉴턴 공식으로 다시 표현하면
-    
-    $$
-    p_{n+1}(x)=p_n(x)+f\left[x_0, x_1, \cdots, x_n, \bar{x}\right] \prod_{j=0}^n(x-x j)
-    $$
-    
-    과 같고, 이 때의 $f(x)$는 다음과 같다.
-    
-    $$
-    f(\bar{x})=p_{n+1}+f\left[x_0, x_1, \cdots, x_n, \bar{x}\right) \prod_{j=0}^n\left(\bar{x}-x_j\right)
-    $$
-    
-    아래에서 표현된 식들로 오차에 대한 식을 다시 정리해보면
-    
-    $$
-    e_n(\bar{x})=f\left[x_0, x_1, \cdots, x_n, \bar{x}\right] \prod_{j=0}^n\left(\bar{x}-x_j\right)
-    $$
-    
-    위처럼 나타낼 수 있다.
+따라서 다음이 성립한다.
 
+$$
+\begin{aligned}
+& p_{n+1}\left(x_i\right)=f\left(x_i\right), \quad i=0,1,2, \cdots, n \\
+& p_{n+1}(\bar{x})=f(\bar{x})
+\end{aligned}
+$$
+
+뉴턴 공식으로 다시 표현하면
+
+$$
+p_{n+1}(x)=p_n(x)+f\left[x_0, x_1, \cdots, x_n, \bar{x}\right] \prod_{j=0}^n(x-x_j)
+$$
+
+과 같고, 이 때의 $f(x)$는 다음과 같다.
+
+$$
+f(\bar{x})=p_{n+1}+f\left[x_0, x_1, \cdots, x_n, \bar{x}\right) \prod_{j=0}^n\left(\bar{x}-x_j\right)
+$$
+
+아래에서 표현된 식들로 오차에 대한 식을 다시 정리해보면
+
+$$
+e_n(\bar{x})=f\left[x_0, x_1, \cdots, x_n, \bar{x}\right] \prod_{j=0}^n\left(\bar{x}-x_j\right)
+$$
+
+위처럼 나타낼 수 있다.
+
+- 참고 자료
+    
+    [[수치해석] 6. Lagrange Interpolation](https://jehunseo.tistory.com/140)
+    
+    [다항 함수 보간(Polynomial Interpolation)](https://ghebook.blogspot.com/2020/09/polynomial-interpolation.html)
+    
+    [수치해석 및 실습 - 6 분할 차분표와 보간표](https://throwexception.tistory.com/274)
+    
+    [6차시 - 분할차분표와 보간법(1)](https://pseudo-code.tistory.com/117)
+    
+
+그렇다면 과연 뉴턴 보간법은 단점이 없을까? 그렇지 않다.
+
+# 3. Spline Interpolation
+
+뉴턴 보간법과 라그랑주 보간법은 계단 함수와 같은 급격한 불연속을 잘 표현하지 못한다.
+
+- **Runge 현상**
+    
+    Runge 함수는 Polynomial로 적합이 잘 되지 않는 함수로 알려져 있다.
+    
+    $$
+    f(x)=\frac{1}{1+25 x^2}
+    $$
+    ![Alt text](polynomial_interpolation3.png)
+    
+    
+- **Gibbs 현상**
+    불연속 함수를 근사할 때 불연속 값 근처에서 나타나는 불일치 현상
+    ![Alt text](polynomial_interpolation4.png)
+    
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2fe91022-1a16-4c09-a59e-19b069be3e9d/1db13aae-7e15-4dd8-9405-80577152de70/Untitled.png)
+
+### **Piecewise Polynomials Interpolation**
+
+여러 개의 데이터를 하나의 추정 함수로 표현하지 않고, 구간 별로 추정 함수를 구하는 것
+
+![Alt text](polynomial_interpolation5.png)
+사진은 Interpolation이 아니라 Regression에 해당하지만, Piecewise Polynomial에 대한 이해를 돕기 위해 가져왔다.
+
+다만, 사진처럼 knot에서 불연속이기 때문에, 합리적이지 않은 추정 함수가 나올 수 있다.
+
+### Continuous Piecewise Polynomials Interpolation
+
+![Alt text](polynomial_interpolation6.png)
+
+Piecewise에 연속이라는 제약 조건을 추가했다.
+
+하지만 여전히 만족스럽지 않다.
+
+## **Spline**
+
+- 각 지점(knots)에서 자기 자신과 1차 미분 함수부터 $d-1$차 미분 함수까지 모두 연속이다.
+- knot에서 함수의 계수가 변하므로 knot가 많을 수록 더 유연하게 된다.
+
+점과 점 사이를 그저 연결하면 Linear Spline이 되기 때문에, 선형 스플라인은 잘 활용하지 않는다.
+
+2차 Spline부터 알아보자.
+
+### Quadratic Spline Interpolation
+
+n+1개의 점을 연결하는 n개의 2차 다항식을 추정하고자 한다.
+
+각 2차 다항식마다 $ax^2 + bx + c$와 같이 3개의 미지수가 존재하기 때문에, 
+모든 다항식을 추정하기 위해서 $3n$개의 조건이 필요하다.
+
+이러한 $3n$개의 조건은 적절한 제약을 추가하여 얻을 수 있다.
+
+1. **첫 번째 함수와 맨 마지막 함수는 각각 첫 번째 점과 마지막 점을 지나야 한다.**
+    
+    이로부터 2개의 조건을 얻을 수 있다.
+    
+    $\begin{aligned}& f\left(x_0\right)=a_1 x_0^2+b_1 x_0+c_1 \\& f\left(x_n\right)=a_n x_n^2+b_n x_n+c_n\end{aligned}$
+    
+    이제 나머지 n개의 조건을 얻으면 된다.
+    
+2. 양 끝을 제외한 n-1개의 점에서 **함수가 연속해야 한다.**
+    
+    즉, 각 내부의 점에서 n개의 함수는 양 끝 점을 지나야 한다.
+    
+    이로부터 $2n-2$개의 조건을 얻을 수 있다.
+    
+    $i=2\dots n$일 때, 
+    $f\left(x_{i-1}\right)=a_{i-1} x_{i-1}^2+b_{i-1} x_{i-1}+c_{i-1}:$ 주어진 $i-1$번째 데이터의 왼쪽 함수 $f\left(x_{i-1}\right)=a_i x_{i-1}^2+b_i x_{i-1}+c_i:$ 주어진 $i-1$ 번째 데이터의 오른쪽 함수 
+    
+3. **모든 점에서 함수가 매끄러워야 한다. 즉, 모든 knots에서 미분 가능해야 한다.**
+    
+    $i=2\dots n$일 때, 
+    $f^{\prime}\left(x_{i-1}\right)=2 a_{i-1} x_{i-1}+b_{i-1}$ : 주어진 $i-1$ 번째 데이터의 왼쪽 1차 도함수 $f^{\prime}\left(x_{i-1}\right)=2 a_i x_{i-1}+b_i$ : 주어진 $i-1$ 번째 데이터의 왼쪽 1차 도함수
+    
+    이를 통해 $n-1$개의 조건을 얻을 수 있다.
+    
+    이제 단 하나의 조건만 있으면 된다.
+    
+4. **첫 번째 함수의 이계 도함수는 0이다. 즉, 첫 번째 함수는 직선이다.**
+    
+    $f_1''(x_0) = a_1 = 0$
+    
+
+이렇게 총 $3n$개의 조건을 얻었으므로, $n$개의 2차 다항식을 추정할 수 있다.
+
+### Cubic Spline Interpolation
+
+2차 Spline 보간법과 마찬가지 이유로 이번에는 $4n$개의 조건이 필요하다.
+
+1. 첫 번째와 마지막 함수는 각 양 끝 점을 지난다. → $2$
+2. 연속 → $2n - 2$
+3. 미분 가능(1계 도함수 연속) → $n-1$
+4. 2계 도함수 연속 → $n-1$
+
+---
+
+여기까지 계산하면 총 $4n - 2$로 2개의 조건이 부족해 유일 해를 구할 수 없다.
+
+따라서 다음과 같은 임의의 조건을 추가하여 유일 해를 채울 수 있다.
+
+1. **첫 번째 함수와 마지막 함수의 2계 도함수는 0이어야 한다. → $2$**
+
+이러한 다섯 개의 조건으로 보간된 곡선을 **Natural Cubic Spline**이라고 한다.
+
+4차 이상의 고차 스플라인은 내재된 불안정성 때문에 잘 사용하지 않기 때문에, Cubic Spline을 가장 많이 활용한다.
+
+### 참고 자료
+
+[회귀 스플라인 (Regression Spline)에 대한 이해](https://m.blog.naver.com/je1206/220804048936)
+
+[[interpolation] - Spline method](https://hofe-rnd.tistory.com/entry/interpolation-Spline-method-1)
+
+[Splines](https://velog.io/@ddangchani/Splines)
+
+[스플라인 보간법 - 점을 부드럽게 잇기](https://helloworldpark.github.io/jekyll/update/2017/02/04/Spline.html)
+
+[[ISL] 7장 -비선형모델(Local regression, Smoothing splines, GAM) 이해하기 · Go's BLOG](https://godongyoung.github.io/머신러닝/2018/02/14/ISL-Moving-Beyond-Linearity_ch7.html)
