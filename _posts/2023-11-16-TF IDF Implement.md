@@ -150,7 +150,6 @@ for doc in dic.values():
 
 아래 내용은 내 강의 노트의 일부분을 가져왔다.
 
-<aside>
 📌 **idf weight**
 
 - $df_{term}$는 term를 포함하는 **문서**의 빈도이다.
@@ -164,7 +163,6 @@ for doc in dic.values():
         
         log의 base가 꼭 10일 필요는 없다.
         
-</aside>
 
 우선 lf_weight와 마찬가지로 idf를 계산하기 위한 함수를 선언해주었다.
 
@@ -220,7 +218,7 @@ def idf_cal(x):
 
 ### 5. 문서의 tf-idf Weight 계산하기.
 
-<aside>
+
 📌 **tf-idf weighting**
 
 - term의 tf-idf 가중치는 tf 가중치와 idf 가중치의 곱이다.
@@ -235,7 +233,7 @@ def idf_cal(x):
     
 - 가중치는 collection에서 term의 발생 빈도에 따라 증가한다.
 - 가중치는 컬렉션 내에 term이 희귀할수록 증가한다.
-</aside>
+
 
 이제 거의 다 왔다. 그저 문서 각각에 포함된 단어별 tf 값에, 해당 단어를 word-idf 사전에 검색하여 값을 곱해주기만 하면 된다.
 
