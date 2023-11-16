@@ -15,7 +15,7 @@ img_path: /assets/post_imgs/
 ![tfi](tfi.png)
 일단 데이터를 처리하기 위해 코드에서 파일을 열어야 하는데, 문서가 한글파일로 제공되었기 때문에 한글 문서를 txt 문서로 변환해주었다.
 
-![tfi](tfi1.png){: w="100" h="50" }
+![tfi](tfi1.png){: w="200" h="100" }
 
 언어는 파이썬을 선택했다.
 
@@ -55,9 +55,9 @@ JPype1.1.2와 JPype3-1, Python 3.6, Python 3.7, Python 3.10의 조합을 활용�
 
 아래는 내가 문제를 해결하는 데 도움을 받은 글이다.
 
-https://blog.naver.com/myincizor/221624979283
+[https://blog.naver.com/myincizor/221624979283](https://blog.naver.com/myincizor/221624979283)
 
-https://ingu627.github.io/tips/install_konlpy/
+[https://ingu627.github.io/tips/install_konlpy/](https://ingu627.github.io/tips/install_konlpy/)
 
 ---
 
